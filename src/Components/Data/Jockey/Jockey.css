@@ -1,0 +1,221 @@
+#jockeyDataWrapper {
+  display: inline-block;
+  margin-left: 160px;
+  list-style: none;
+  font-size: 14px;
+}
+
+#jockeyDataId {
+  display: inline-block;
+  margin-left: 12px;
+  width: 34px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#jockeyDataName {
+  display: inline-block;
+  width: 140px;
+  margin-left: 30px;
+}
+
+#jockeyDataRank {
+  display: inline-block;
+  width: 30px;
+  margin-left: 10px;
+}
+
+#jockeyDataWeight {
+  display: inline-block;
+  width: 40px;
+  margin-left: 28px;
+}
+
+#jockeyDataHeight {
+  display: inline-block;
+  width: 40px;
+  margin-left: 26px;
+}
+
+#jockeyDataStarts {
+  display: inline-block;
+  width: 30px;
+  margin-left: 22px;
+}
+
+#jockeyDataFirst {
+  display: inline-block;
+  width: 40px;
+  margin-left: 26px;
+}
+
+#jockeyDataSecond {
+  display: inline-block;
+  width: 40px;
+  margin-left: 10px;
+}
+
+#jockeyDataThird {
+  display: inline-block;
+  width: 40px;
+  margin-left: 10px;
+}
+
+#jockeyDataTotalPurse {
+  display: inline-block;
+  width: 50px;
+  margin-left: 2px;
+  text-align: right;
+}
+
+#jockeyDataPerStartPUrse {
+  display: inline-block;
+  width: 40px;
+  margin-left: 42px;
+  text-align: right;
+}
+
+#jockeyDataWinPercent {
+  display: inline-block;
+  width: 40px;
+  margin-left: 40px;
+}
+
+#jockeyDataTopThree {
+  display: inline-block;
+  width: 20px;
+  margin-left: 14px;
+  text-align: right;
+}
+
+#jockeyDataTopThreePercent {
+  display: inline-block;
+  width: 20px;
+  margin-left: 38px;
+  text-align: right;
+}
+
+#jockeyDataYears {
+  display: inline-block;
+  width: 20px;
+  margin-left: 34px;
+  text-align: left;
+}
+
+/*
+///
+
+List Section
+
+/// */
+
+#jockeyListHeader {
+  display: inline-block;
+  color: rgb(8, 8, 156);
+  background-color: green;
+  font-size: 20px;
+  margin-left: 20px;
+  margin-top: 240px;
+  letter-spacing: 1.5px;
+  padding-bottom: 0px;
+  position: fixed;
+}
+
+#jockeyHeaderTitles {
+  display: inline-block;
+  margin-left: 210px;
+  margin-top: 160px;
+}
+#jockeyListId {
+  display: inline-block;
+  margin-left: 4px;
+  width: 24px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#jockeyListName {
+  display: inline-block;
+  width: 150px;
+  margin-left: 30px;
+}
+
+#jockeyListRank {
+  display: inline-block;
+  width: 20px;
+  margin-left: 4px;
+}
+
+#jockeyListWeight {
+  display: inline-block;
+  width: 40px;
+  margin-left: 40px;
+}
+
+#jockeyListHeight {
+  display: inline-block;
+  width: 40px;
+  margin-left: 22px;
+}
+
+#jockeyListStarts {
+  display: inline-block;
+  width: 40px;
+  margin-left: 24px;
+}
+
+#jockeyListFirst {
+  display: inline-block;
+  width: 32px;
+  margin-left: 18px;
+}
+
+#jockeyListSecond {
+  display: inline-block;
+  width: 32px;
+  margin-left: 18px;
+}
+
+#jockeyListThird {
+  display: inline-block;
+  width: 32px;
+  margin-left: 18px;
+}
+
+#jockeyListTotalPurse {
+  display: inline-block;
+  width: 32px;
+  margin-left: 16px;
+}
+
+#jockeyListPerStartPUrse {
+  display: inline-block;
+  width: 32px;
+  margin-left: 56px;
+}
+
+#jockeyListWinPercent {
+  display: inline-block;
+  width: 40px;
+  margin-left: 34px;
+}
+
+#jockeyListTopThree {
+  display: inline-block;
+  width: 40px;
+  margin-left: 20px;
+}
+
+#jockeyListTopThreePercent {
+  display: inline-block;
+  width: 34px;
+  margin-left: 24px;
+}
+
+#jockeyListYears {
+  display: inline-block;
+  width: 40px;
+  margin-left: 16px;
+}

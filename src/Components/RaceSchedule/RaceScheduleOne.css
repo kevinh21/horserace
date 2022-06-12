@@ -1,0 +1,11 @@
+.raceScheduleOneWrapper {
+  display: block;
+  margin-left: 30px;
+  margin-top: 260px;
+}
+
+.raceScheduleOneFrame {
+  display: inline-block;
+  margin-left: 240px;
+  margin-top: -236px;
+}

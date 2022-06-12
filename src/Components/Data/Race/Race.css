@@ -1,0 +1,170 @@
+#raceDataWrapper {
+  display: inline-block;
+  padding-left: 160px;
+  list-style: none;
+  font-size: 12px;
+}
+
+#raceDataId {
+  display: inline-block;
+  padding-left: 12px;
+  width: 16px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#raceDataEntryFee {
+  display: inline-block;
+  width: 60px;
+  padding-left: 20px;
+  text-align: right;
+}
+
+#raceDataPurse {
+  display: inline-block;
+  width: 80px;
+  padding-left: 24px;
+  text-align: right;
+}
+
+#raceDataTime {
+  display: inline-block;
+  width: 52px;
+  padding-left: 18px;
+}
+
+#raceDataWinner {
+  display: inline-block;
+  width: 90px;
+  padding-left: 4px;
+}
+
+#raceDataDate {
+  display: inline-block;
+  width: 60px;
+  padding-left: 22px;
+}
+
+#raceDataRaceName {
+  display: inline-block;
+  width: 92px;
+  padding-left: 20px;
+}
+
+#raceDataOwner {
+  display: inline-block;
+  width: 110px;
+  padding-left: 10px;
+}
+
+#raceDataTrainer {
+  display: inline-block;
+  width: 80px;
+  padding-left: 20px;
+}
+
+#raceDataJockey {
+  display: inline-block;
+  width: 90px;
+  padding-left: 22px;
+}
+
+#raceDataValue {
+  display: inline-block;
+  width: 40px;
+  padding-left: 22px;
+  text-align: right;
+}
+
+/*
+///
+
+List Section
+
+/// */
+
+#raceDataHeader {
+  display: inline-block;
+  color: rgb(8, 8, 156);
+  background-color: green;
+  font-size: 20px;
+  padding-left: 20px;
+  margin-top: 240px;
+  letter-spacing: 1.5px;
+  padding-bottom: 0px;
+  position: fixed;
+}
+
+#raceHeaderTitles {
+  display: inline-block;
+  padding-left: 210px;
+  margin-top: 160px;
+}
+#raceListId {
+  display: inline-block;
+  padding-left: 4px;
+  width: 24px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#raceListEntryFee {
+  display: inline-block;
+  width: 82px;
+  padding-left: 16px;
+}
+
+#raceListPurse {
+  display: inline-block;
+  width: 20px;
+  padding-left: 8px;
+}
+
+#raceListTime {
+  display: inline-block;
+  width: 40px;
+  padding-left: 68px;
+}
+
+#raceListWinner {
+  display: inline-block;
+  width: 84px;
+  padding-left: 12px;
+}
+
+#raceListDate {
+  display: inline-block;
+  width: 40px;
+  padding-left: 32px;
+}
+
+#raceListRaceName {
+  display: inline-block;
+  width: 84px;
+  padding-left: 32px;
+}
+
+#raceListOwner {
+  display: inline-block;
+  width: 52px;
+  padding-left: 20px;
+}
+
+#raceListTrainer {
+  display: inline-block;
+  width: 92px;
+  padding-left: 74px;
+}
+#raceListJockey {
+  display: inline-block;
+  width: 82px;
+  padding-left: 16px;
+}
+
+#raceListValue {
+  display: inline-block;
+  width: 52px;
+  padding-left: 28px;
+}

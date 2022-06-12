@@ -1,0 +1,17 @@
+#video {
+  position: fixed;
+  margin-top: 1.5%;
+  margin-left: 180px;
+  width: 84vw;
+  top: 0;
+  z-index: -1;
+}
+
+#raceSchedule {
+  font-size: 24px;
+  margin-left: -16px;
+  margin-top: -30px;
+}
+.ulRaceList li {
+  padding: 12px;
+}

@@ -1,0 +1,85 @@
+#motion-horse1 {
+  offset-path: path("M0,00, C8600, 100,0,0, 0,0");
+  animation-name: move;
+  animation-timing-function: cubic-bezier(0.4915, 0.6136, 0.65, 0.43);
+  animation-direction: reverse;
+  animation-fill-mode: forwards;
+  animation-duration: 7.5s;
+  animation-iteration-count: 1;
+  float: right;
+  margin-top: -158px;
+  margin-right: 68.3%;
+}
+
+#motion-horse1::before {
+  content: "1";
+  color: red;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+#motion-horse2 {
+  offset-path: path("M0,0, C8500, 0,210,0, 0,0");
+  animation-name: move;
+  animation-timing-function: cubic-bezier(0.3415, 0.6756, 0.7, 0.46);
+  animation-direction: reverse;
+  animation-fill-mode: forwards;
+  animation-duration: 7.1s;
+  animation-iteration-count: 1;
+  float: right;
+  margin-top: -95px;
+  margin-right: 68.3%;
+}
+#motion-horse2::before {
+  content: "2";
+  color: rgb(192, 181, 24);
+  font-size: 32px;
+  font-weight: 700;
+}
+
+#motion-horse3 {
+  offset-path: path("M0,0, C8700, 0,220,0, 0,0");
+  animation-name: move;
+  animation-timing-function: cubic-bezier(0.3395, 0.6361, 200.75, 0.45);
+  animation-direction: reverse;
+  animation-fill-mode: forwards;
+  animation-duration: 8.6s;
+  animation-iteration-count: 1;
+  float: right;
+  margin-right: 68.3%;
+  margin-top: -42px;
+}
+#motion-horse3::before {
+  content: "3";
+  color: rgb(215, 13, 185);
+  font-size: 32px;
+  font-weight: 700;
+}
+
+#motion-horse4 {
+  offset-path: path("M0,0, C8400, 0,310,0, 0,0");
+  animation-name: move;
+  animation-timing-function: cubic-bezier(0.323, 0.5858, 0.82, 0.47);
+  animation-direction: reverse;
+  animation-fill-mode: forwards;
+  animation-duration: 7.8s;
+  animation-iteration-count: 1;
+  float: right;
+  margin-right: 68.3%;
+  margin-top: -84px;
+}
+#motion-horse4::before {
+  content: "4";
+  color: rgb(35, 54, 156);
+  font-size: 32px;
+  font-weight: 700;
+}
+
+@keyframes move {
+  0% {
+    offset-distance: 0%;
+  }
+  100% {
+    offset-distance: 50%;
+  }
+}

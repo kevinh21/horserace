@@ -1,0 +1,100 @@
+.navWrapper {
+  top: 0px;
+  position: fixed;
+  width: 100%;
+  box-shadow: 0 12px 12px rgba(0, 0, 0, 0.5);
+  background-color: rgb(72, 177, 233);
+  z-index: +2;
+  height: 60px;
+}
+
+#navLogo {
+  right: 100%;
+  margin-top: -15px;
+  margin-right: 10px;
+  /* float: left; */
+  margin-left: -136px;
+}
+
+nav {
+  font-size: 16px;
+  margin-top: 16px;
+  color: rgb(5, 45, 105);
+}
+#navMenu {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  list-style: none;
+  margin-left: 280px;
+}
+
+#home {
+  margin-left: -72px;
+  /* margin-right: 10px; */
+}
+
+a {
+  text-decoration: none;
+  color: rgb(5, 45, 105);
+}
+
+a:hover {
+  color: rgb(5, 45, 105);
+  /* background-color: rgb(98, 114, 149); */
+  font-size: 18px;
+  font-weight: 600;
+}
+
+#navMenu li {
+  padding-left: -20px;
+  padding-right: 30px;
+  margin-top: 22px;
+}
+
+#navData {
+  display: inline-block;
+  list-style-type: none;
+  /* margin-left: 0px; */
+  padding-bottom: 8px;
+  background-color: rgb(72, 177, 233);
+}
+
+#navData li {
+  display: none;
+  background-color: rgb(72, 177, 233);
+}
+
+#navData::before {
+  content: "Data Sheets";
+  display: inline-block;
+  font-size: 16px;
+}
+
+#navData:hover li {
+  display: block;
+  z-index: +2;
+}
+
+#navHowTo {
+  display: inline-block;
+  list-style-type: none;
+  margin-left: -28px;
+  background-color: rgb(72, 177, 233);
+  padding-bottom: 8px;
+  text-align: left;
+}
+
+#navHowTo li {
+  display: none;
+  background-color: rgb(72, 177, 233);
+}
+#navHowTo::before {
+  content: "How to play";
+  display: inline-block;
+}
+
+#navHowTo:hover li {
+  display: block;
+  z-index: +2;
+}
