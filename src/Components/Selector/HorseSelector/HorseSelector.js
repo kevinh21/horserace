@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 const HorseSelector = (props) => {
   const [horses, setHorses] = useState([]);
   const [horsesName, setHorsesName] = useState([]);
-  const [horsesInfo, setHorsesInfo] = useState([]);
+  const [horsesInfo, setHorsesInfo] = useState(horses);
 
   useEffect(() => {
     getHorse();
@@ -18,23 +18,25 @@ const HorseSelector = (props) => {
       .then((data) => {
         let parseData = JSON.parse(data);
         setHorses(parseData);
+        setHorsesInfo(horseData);
       });
   };
 
   const handleChange = (event) => {
     setHorsesName(event.target.value);
-    setHorsesInfo(horsesName);
+    const horseData = horses.find(findHorse);
+    setHorsesInfo(horseData);
   };
 
   const selectHorse = horses.map((selectHorse, index) => (
     <div key={index}>{selectHorse.horseName}</div>
   ));
+
   const findHorse = (horse) => {
     return horse.horseName === horsesName;
   };
-  const horseOut = horses.find(findHorse);
-  console.log(horseOut);
-
+  const horseData = horses.find(findHorse);
+  console.log(horseData);
   return (
     <div>
       <div className="horseSelectorWrapper">
@@ -46,45 +48,21 @@ const HorseSelector = (props) => {
             ))}
           </select>
           <br />
-          Your Selected Horse is: {horsesName}
+          <div> ID # - Horse Name - Starts - Rank - Winning$ - Win %</div>
+          <div>
+            {horseData && (
+              <>
+                {horseData.horseid} - {horseData.horseName} -{horseData.sts}-
+                {horseData.horseRank} - {horseData.horseWinnings} -
+                {horseData.winPercent}%{" "}
+              </>
+            )}
+          </div>
         </form>
         <h3>Number of Records - {horses.length}</h3>
-      </div>
-      <div>
-        {/* Horse Stats: # {horseOut.horseid} -{horseOut.horseName}{" "}
-        {horseOut.horseName} -{horseOut.horseRank} - {horseOut.horseWinnings}
-        {horseOut.winPercent}% */}
       </div>
     </div>
   );
 };
-{
-}
 
 export default HorseSelector;
-
-// const array1 = horses;
-//   const iterator1 = array1.entries();
-//   console.log(iterator1.next().value);
-//   console.log(iterator1.next().value);
-
-//   const cows = array1.find((element) => element > 1);
-//   console.log(cows);
-//   console.log(Array.isArray(horses));
-
-// const array = horses;
-//   const arrayEntries = array.entries();
-
-//   for (let element of arrayEntries) {
-//     console.log(element);
-//   }
-
-// function filterBytag(tag){
-//   const result = data.filter((dataItem) => {
-//     if(dataItem.tags.includes(tag)){
-//       return true;
-//     }
-//     return false;
-//   });
-//   return result;
-// }
