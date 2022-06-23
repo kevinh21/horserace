@@ -16,7 +16,7 @@ const TrackSelector = (props) => {
       })
       .then((data) => {
         let parseData = JSON.parse(data);
-        console.log(parseData);
+        // console.log(parseData);
         setTracks(parseData);
       });
   };
@@ -24,7 +24,7 @@ const TrackSelector = (props) => {
   const selectTrack = tracks.map((selectTrack, index) => (
     <div key={index}>{selectTrack.trackName}</div>
   ));
-  console.log("hello", { selectTrack });
+  // console.log("hello", { selectTrack });
   const handleChange = (event) => {
     setTrackValue(event.target.value);
   };

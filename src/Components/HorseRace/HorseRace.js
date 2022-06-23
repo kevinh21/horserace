@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import Animate from "../Animate/Animate";
 import RaceSchedule from "../RaceSchedule/RaceSchedule";
 import "./HorseRace.css";

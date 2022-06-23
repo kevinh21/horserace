@@ -16,7 +16,7 @@ const JockeySelector = (props) => {
       })
       .then((data) => {
         let parseData = JSON.parse(data);
-        console.log(parseData);
+        // console.log(parseData);
         setJockeys(parseData);
       });
   };
@@ -37,7 +37,7 @@ const JockeySelector = (props) => {
               {selectJockey.map((option) => (
                 <option>{option}</option>
               ))}
-              console.log("hello", {selectJockey});
+              {/* console.log("hello", {selectJockey}); */}
             </select>
           </label>{" "}
           <br />

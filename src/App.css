@@ -1,5 +1,9 @@
 .App {
-  background-color: green;
+  /* background-color: green; */
   height: 1000px;
   /* z-index: -3; */
+}
+
+body {
+  background-color: green;
 }

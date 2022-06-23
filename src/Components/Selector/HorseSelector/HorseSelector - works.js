@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 const HorseSelector = (props) => {
   const [horses, setHorses] = useState([]);
   const [horsesName, setHorsesName] = useState([]);
-  const [horsesInfo, setHorsesInfo] = useState([]);
+  const [horsesIdent, setHorsesIdent] = useState([]);
 
   useEffect(() => {
     getHorse();
@@ -20,20 +20,21 @@ const HorseSelector = (props) => {
         setHorses(parseData);
       });
   };
+  ////////////////// Drop down selections ////////////////////////////////////////////
 
   const handleChange = (event) => {
     setHorsesName(event.target.value);
-    setHorsesInfo(horsesName);
   };
+  console.log(horsesName);
 
   const selectHorse = horses.map((selectHorse, index) => (
     <div key={index}>{selectHorse.horseName}</div>
   ));
-  const findHorse = (horse) => {
+
+  function findHorse(horse) {
     return horse.horseName === horsesName;
-  };
+  }
   const horseOut = horses.find(findHorse);
-  console.log(horseOut);
 
   return (
     <div>
@@ -51,16 +52,12 @@ const HorseSelector = (props) => {
         <h3>Number of Records - {horses.length}</h3>
       </div>
       <div>
-        {/* Horse Stats: # {horseOut.horseid} -{horseOut.horseName}{" "}
-        {horseOut.horseName} -{horseOut.horseRank} - {horseOut.horseWinnings}
-        {horseOut.winPercent}% */}
+        Horse Stats: # {horseOut.horseid} - {horseOut.horseName} -
+        {horseOut.horseRank} -{horseOut.horseWinnings} - {horseOut.winPercent}%
       </div>
     </div>
   );
 };
-{
-}
-
 export default HorseSelector;
 
 // const array1 = horses;
