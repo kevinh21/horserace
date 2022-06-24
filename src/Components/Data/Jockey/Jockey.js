@@ -77,7 +77,11 @@ const Jockey = (props) => {
 
   return (
     <div>
-      <div id="jockeyListHeader">JOCKEY DATA</div>
+      <div id="jockeyListHeader">
+        JOCKEY DATA
+        <br /> #{jockeys.length} Listed
+        <br /> Out of 5,548
+      </div>
       <div id="jockeyHeaderTitles"></div>
       <h id="jockeyListId"> ID</h>
       <h id="jockeyListName"> Name</h>

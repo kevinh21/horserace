@@ -43,7 +43,10 @@ const Horse = (props) => {
 
   return (
     <div>
-      <div id="horseDataHeader"> HORSE DATA</div>
+      <div id="horseDataHeader">
+        HORSE DATA <br /> #{horses.length} Listed
+        <br /> Out of 6,027
+      </div>
       <div className="horseDataHeaderTitles"></div>
       <h id="horseDataListHeaderID">ID </h>
       <h id="horseDataListHeaderHorseName">Horse Name</h>

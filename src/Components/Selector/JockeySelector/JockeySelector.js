@@ -3,7 +3,8 @@ import React, { useState, useEffect } from "react";
 
 const JockeySelector = (props) => {
   const [jockeys, setJockeys] = useState([]);
-  const [jockeyValue, setJockeyValue] = useState([]);
+  const [jockeysName, setJockeysName] = useState([]);
+  const [jockeysInfo, setJockeysInfo] = useState(jockeys);
 
   useEffect(() => {
     getJockey();
@@ -21,28 +22,44 @@ const JockeySelector = (props) => {
       });
   };
 
+  const handleChange = (event) => {
+    setJockeysName(event.target.value);
+    const jockeyData = jockeys.find(findJockey);
+    setJockeysInfo(jockeyData);
+  };
+
   const selectJockey = jockeys.map((selectJockey, index) => (
     <div key={index}>{selectJockey.jockeyName}</div>
   ));
-  const handleChange = (event) => {
-    setJockeyValue(event.target.value);
+
+  const findJockey = (jockey) => {
+    return jockey.jockeyName === jockeysName;
   };
+  const jockeyData = jockeys.find(findJockey);
+  console.log(jockeyData);
   return (
     <div>
       <div className="jockeySelectorWrapper">
         <form>
-          <label id="selectAJockey">
-            Select A Jockey
-            <select value={jockeyValue} onChange={handleChange}>
-              {selectJockey.map((option) => (
-                <option>{option}</option>
-              ))}
-              {/* console.log("hello", {selectJockey}); */}
-            </select>
-          </label>{" "}
+          Select A Jockey
+          <select value={jockeysName} onChange={handleChange}>
+            {selectJockey.map((nameValue) => (
+              <option>{nameValue}</option>
+            ))}
+          </select>
           <br />
-          Your Selected Jockey is: {jockeyValue}
+          <div> ID # - Jockey Name - Starts - Rank - Winning$ - Win %</div>
+          <div>
+            {jockeyData && (
+              <>
+                {jockeyData.jockeyid} - {jockeyData.jockeyName} -
+                {jockeyData.sts}-{jockeyData.jockeyRank} -{" "}
+                {jockeyData.jockeyWinnings} -{jockeyData.winPercent}%{" "}
+              </>
+            )}
+          </div>
         </form>
+        <h3>Number of Jockeys - {jockeys.length}</h3>
       </div>
     </div>
   );

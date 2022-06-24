@@ -1,52 +1,6 @@
-.termWrapper {
+.termsWrapper {
   display: inline-block;
-  margin-left: 200px;
-  margin-top: 160px;
-}
-#termData {
-  color: rgb(8, 8, 156);
-  font-size: 32px;
-  margin-left: 210px;
-  padding-top: 20px;
-  letter-spacing: 1.5px;
-  padding-bottom: 10px;
-  margin-top: 18px;
-}
-
-#termDataListHeader {
-  color: rgb(8, 8, 156);
-  font-size: 18px;
-  margin-left: 72px;
-  letter-spacing: 1.5px;
-  word-spacing: 104px;
-}
-
-#termListWrapper {
-  display: inline-block;
-  margin-left: 24px;
-  /* word-spacing: 20px; */
-  list-style: none;
-}
-#termListId {
-  display: inline-block;
-  margin-right: 22px;
-}
-
-#termListTerm {
-  display: inline-block;
-  /* padding-left: 52px; */
-  width: 140px;
-}
-
-#termListDescription {
-  display: inline-block;
-  padding-left: 20px;
-  text-align: left;
-  width: 600px;
-}
-
-#termListRank {
-  display: inline-block;
-  padding-left: 104px;
-  text-align: right;
+  margin-left: 192px;
+  margin-top: 92px;
+  position: fixed;
 }

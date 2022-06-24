@@ -75,7 +75,11 @@ const Trainer = (props) => {
   ));
   return (
     <div>
-      <div id="trainerListHeader">TRAINER DATA</div>
+      <div id="trainerListHeader">
+        TRAINER DATA
+        <br /> #{trainers.length} Listed
+        <br /> Out of 2,748
+      </div>
       <div id="trainerListTitles"></div>
       <h id="trainerListId">ID </h>
       <h id="trainerListTrainerName">Trainer </h>

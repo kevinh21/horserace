@@ -73,7 +73,11 @@ const Race = (props) => {
 
   return (
     <div>
-      <div id="raceDataHeader">RACE DATA</div>
+      <div id="raceDataHeader">
+        RACE DATA
+        <br /> #{races.length} Listed
+        <br /> Out of 2,198
+      </div>
       <div id="raceHeaderTitles"></div>
       <h id="raceListId">ID </h>
       <h id="raceListEntryFee">Entry Fee </h>

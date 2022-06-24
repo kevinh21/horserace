@@ -3,7 +3,8 @@ import React, { useState, useEffect } from "react";
 
 const TrackSelector = (props) => {
   const [tracks, setTracks] = useState([]);
-  const [trackValue, setTrackValue] = useState([]);
+  const [tracksName, setTracksName] = useState([]);
+  const [tracksInfo, setTracksInfo] = useState(tracks);
 
   useEffect(() => {
     getTrack();
@@ -16,35 +17,52 @@ const TrackSelector = (props) => {
       })
       .then((data) => {
         let parseData = JSON.parse(data);
-        // console.log(parseData);
         setTracks(parseData);
+        // setTracksInfo(trackData);
       });
+  };
+
+  const handleChange = (event) => {
+    setTracksName(event.target.value);
+    const trackData = tracks.find(findTrack);
+    setTracksInfo(trackData);
   };
 
   const selectTrack = tracks.map((selectTrack, index) => (
     <div key={index}>{selectTrack.trackName}</div>
   ));
-  // console.log("hello", { selectTrack });
-  const handleChange = (event) => {
-    setTrackValue(event.target.value);
-  };
 
+  const findTrack = (track) => {
+    return track.trackName === tracksName;
+  };
+  const trackData = tracks.find(findTrack);
+  console.log(trackData);
   return (
     <div>
       <div className="trackSelectorWrapper">
         <form>
-          <label id="chooseATrack">
-            Choose A Track
-            <select value={trackValue} onChange={handleChange}>
-              {selectTrack.map((option) => (
-                <option>{option}</option>
-              ))}
-            </select>
-          </label>
-          Your Selected Track is: {trackValue}
+          Select A Track
+          <select value={tracksName} onChange={handleChange}>
+            {selectTrack.map((nameValue) => (
+              <option>{nameValue}</option>
+            ))}
+          </select>
+          <br />
+          <div> ID # - Track Name - Starts - Rank - Winning$ - Win %</div>
+          <div>
+            {trackData && (
+              <>
+                {trackData.trackid} - {trackData.trackName} -{trackData.sts}-
+                {trackData.trackRank} - {trackData.trackWinnings} -
+                {trackData.winPercent}%{" "}
+              </>
+            )}
+          </div>
         </form>
+        <h3>Number of Tracks - {tracks.length}</h3>
       </div>
     </div>
   );
 };
+
 export default TrackSelector;

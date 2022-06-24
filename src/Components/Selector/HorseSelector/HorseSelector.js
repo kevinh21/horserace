@@ -18,7 +18,7 @@ const HorseSelector = (props) => {
       .then((data) => {
         let parseData = JSON.parse(data);
         setHorses(parseData);
-        setHorsesInfo(horseData);
+        // setHorsesInfo(horseData);
       });
   };
 
@@ -59,7 +59,7 @@ const HorseSelector = (props) => {
             )}
           </div>
         </form>
-        <h3>Number of Records - {horses.length}</h3>
+        <h3>Number of Horses - {horses.length}</h3>
       </div>
     </div>
   );

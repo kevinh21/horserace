@@ -8,7 +8,7 @@
 #raceDataId {
   display: inline-block;
   padding-left: 12px;
-  width: 16px;
+  width: 36px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -31,13 +31,13 @@
 #raceDataTime {
   display: inline-block;
   width: 52px;
-  padding-left: 18px;
+  padding-left: 1px;
 }
 
 #raceDataWinner {
   display: inline-block;
   width: 90px;
-  padding-left: 4px;
+  padding-left: 8px;
 }
 
 #raceDataDate {
@@ -125,13 +125,13 @@ List Section
 #raceListTime {
   display: inline-block;
   width: 40px;
-  padding-left: 68px;
+  padding-left: 78px;
 }
 
 #raceListWinner {
   display: inline-block;
   width: 84px;
-  padding-left: 12px;
+  padding-left: 16px;
 }
 
 #raceListDate {
