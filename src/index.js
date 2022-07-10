@@ -1,4 +1,5 @@
 import React from "react";
+//npm install react-routeer-dom
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ReactDOM from "react-dom";
 import "./index.css";
@@ -68,3 +69,10 @@ ReactDOM.render(
   </Router>,
   document.getElementById("root")
 );
+
+//dynamics routes :  and useParams   <switch> in router 5.x
+// use exact - <route path ="/whatever" exact>  - to manage links correctly
+//redirect  from root domain to other page, Welcome for example
+
+
+//onfocus() with router to 

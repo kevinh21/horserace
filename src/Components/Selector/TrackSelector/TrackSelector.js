@@ -48,18 +48,21 @@ const TrackSelector = (props) => {
             ))}
           </select>
           <br />
-          <div> ID # - Track Name - Starts - Rank - Winning$ - Win %</div>
+          <div>
+            {" "}
+            ID # - Track Name - Location - Ground Type - Distance - Race Type
+          </div>
           <div>
             {trackData && (
               <>
-                {trackData.trackid} - {trackData.trackName} -{trackData.sts}-
-                {trackData.trackRank} - {trackData.trackWinnings} -
-                {trackData.winPercent}%{" "}
+                {trackData.trackid} - {trackData.trackName} -{trackData.state}-
+                {trackData.groundType} - {trackData.distance} -
+                {trackData.racingType}
               </>
             )}
           </div>
         </form>
-        <h3>Number of Tracks - {tracks.length}</h3>
+        {/* <h3>Number of Tracks - {tracks.length}</h3> */}
       </div>
     </div>
   );

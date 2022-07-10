@@ -1,9 +1,15 @@
-#myhorseListDataWrapper {
-  display: inline-block;
+.myhorseListDataContainer {
+  display: flex;
   padding-left: 164px;
-  padding-top: -20px;
+}
+
+#myhorseListDataWrapper {
+  /* display: inline-block; */
+  margin-top: 5px;
+  padding-left: 164px;
   list-style: none;
   font-size: 14px;
+  float: left;
 }
 
 #horseDataHeader {
@@ -21,18 +27,23 @@
 .horseDataHeaderTitles {
   display: inline-block;
   padding-left: 160px;
-  padding-top: 160px;
+  padding-top: 20px;
+  background-color: green;
+  margin-top: 64px;
+  font-style: bold;
+  height: 46px;
+  font-size: 18pt;
+  position: fixed;
 }
 
 #horseDataListHeaderID {
   display: inline-block;
   padding-left: 50px;
-  text-align: right;
+  width: 40px;
 }
 #horseDataListHeaderHorseName {
   display: inline-block;
-  padding-left: 16px;
-  /* padding-right: 32px; */
+  padding-left: 12px;
   width: 160px;
   text-align: left;
 }
@@ -46,7 +57,7 @@
 
 #horseDataListHeaderWinnings {
   display: inline-block;
-  padding-left: 16px;
+  padding-left: 26px;
   text-align: left;
 }
 #horseDataListHeaderRank {
@@ -63,19 +74,10 @@
 
 #horseDataListHeaderWinPercent {
   display: inline-block;
-  padding-left: 36px;
+  padding-left: 26px;
   text-align: left;
 }
-#horseDataListHeaderLocation {
-  display: inline-block;
-  padding-left: 60px;
-  text-align: right;
-}
-#horseDataListHeaderDistance {
-  display: inline-block;
-  padding-left: 120px;
-  text-align: right;
-}
+
 #horseDataListHeaderFirst {
   display: inline-block;
   padding-left: 26px;
@@ -125,28 +127,28 @@
 #horseListDataWinnings {
   display: inline-block;
   padding-left: 8px;
-  /* width: 80px; */
+  width: 80px;
   text-align: right;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  padding-right: 10px;
+  /* padding-right: 10px; */
 }
 
 #horseListDataRank {
   display: inline-block;
-  padding-left: 28px;
+  padding-left: 68px;
   text-align: right;
-  width: 40px;
+  width: 50px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 #horseListDataStarts {
   display: inline-block;
-  padding-left: 62px;
-  word-spacing: 3px;
-  width: 40px;
+  padding-left: 52px;
+  text-align: right;
+  width: 20px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -155,9 +157,10 @@
 
 #horseListDataWinPercent {
   display: inline-block;
-  padding-left: 32px;
+  padding-left: 42px;
   word-spacing: 3px;
-  width: 40px;
+  width: 50px;
+  text-align: right;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -165,7 +168,9 @@
 }
 #horseListDataFirst {
   display: inline-block;
-  padding-left: 32px;
+  width: 20px;
+  text-align: right;
+  padding-left: 42px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -174,7 +179,7 @@
 
 #horseListDataSecond {
   display: inline-block;
-  padding-left: 32px;
+  padding-left: 38px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -183,7 +188,7 @@
 
 #horseListDataThird {
   display: inline-block;
-  padding-left: 32px;
+  padding-left: 52px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

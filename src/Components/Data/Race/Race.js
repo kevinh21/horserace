@@ -61,7 +61,7 @@ const Race = (props) => {
         <h id="raceDataPurse"> {myRace.purse}</h>
         <h id="raceDataTime"> {myRace.time}</h>
         <h id="raceDataWinner"> {myRace.winner}</h>
-        <h id="raceDataDate"> {myRace.date}</h>
+        <h id="raceDataYear"> {myRace.year}</h>
         <h id="raceDataRaceName"> {myRace.raceName}</h>
         <h id="raceDataOwner"> {myRace.owner}</h>
         <h id="raceDataTrainer"> {myRace.trainer}</h>
@@ -76,7 +76,7 @@ const Race = (props) => {
       <div id="raceDataHeader">
         RACE DATA
         <br /> #{races.length} Listed
-        <br /> Out of 2,198
+        <br /> Out of 8,792
       </div>
       <div id="raceHeaderTitles"></div>
       <h id="raceListId">ID </h>

@@ -16,31 +16,31 @@
 
 #raceDataEntryFee {
   display: inline-block;
-  width: 60px;
-  padding-left: 20px;
+  width: 50px;
+  padding-left: 2px;
   text-align: right;
 }
 
 #raceDataPurse {
   display: inline-block;
-  width: 80px;
-  padding-left: 24px;
+  width: 70px;
+  padding-left: 2px;
   text-align: right;
 }
 
 #raceDataTime {
   display: inline-block;
   width: 52px;
-  padding-left: 1px;
+  padding-left: 51px;
 }
 
 #raceDataWinner {
   display: inline-block;
   width: 90px;
-  padding-left: 8px;
+  padding-left: 28px;
 }
 
-#raceDataDate {
+#raceDataYear {
   display: inline-block;
   width: 60px;
   padding-left: 22px;
@@ -125,13 +125,13 @@ List Section
 #raceListTime {
   display: inline-block;
   width: 40px;
-  padding-left: 78px;
+  padding-left: 58px;
 }
 
 #raceListWinner {
   display: inline-block;
   width: 84px;
-  padding-left: 16px;
+  padding-left: 40px;
 }
 
 #raceListDate {

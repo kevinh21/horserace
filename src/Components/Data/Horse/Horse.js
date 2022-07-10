@@ -47,17 +47,18 @@ const Horse = (props) => {
         HORSE DATA <br /> #{horses.length} Listed
         <br /> Out of 6,027
       </div>
-      <div className="horseDataHeaderTitles"></div>
-      <h id="horseDataListHeaderID">ID </h>
-      <h id="horseDataListHeaderHorseName">Horse Name</h>
-      <h id="horseDataListHeaderSireName">Sire Name</h>
-      <h id="horseDataListHeaderWinnings">Winnings</h>
-      <h id="horseDataListHeaderRank">Rank</h>
-      <h id="horseDataListHeaderStarts">Starts</h>
-      <h id="horseDataListHeaderWinPercent">Win Percent</h>
-      <h id="horseDataListHeaderFirst">1st</h>
-      <h id="horseDataListHeaderSecond">2nd</h>
-      <h id="horseDataListHeaderThird">3rd</h>
+      <div className="horseDataHeaderTitles">
+        <h id="horseDataListHeaderID">ID </h>
+        <h id="horseDataListHeaderHorseName">Horse Name</h>
+        <h id="horseDataListHeaderSireName">Sire Name</h>
+        <h id="horseDataListHeaderWinnings">Winnings</h>
+        <h id="horseDataListHeaderRank">Rank</h>
+        <h id="horseDataListHeaderStarts">Starts</h>
+        <h id="horseDataListHeaderWinPercent">Win %</h>
+        <h id="horseDataListHeaderFirst">1st</h>
+        <h id="horseDataListHeaderSecond">2nd</h>
+        <h id="horseDataListHeaderThird">3rd</h>
+      </div>{" "}
       <div> {horseList}</div>
     </div>
   );

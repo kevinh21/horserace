@@ -17,7 +17,10 @@
 #jockeyDataName {
   display: inline-block;
   width: 140px;
-  margin-left: 30px;
+  margin-left: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 #jockeyDataRank {
@@ -140,18 +143,21 @@ List Section
   display: inline-block;
   width: 150px;
   margin-left: 30px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 #jockeyListRank {
   display: inline-block;
   width: 20px;
-  margin-left: 4px;
+  margin-left: px;
 }
 
 #jockeyListWeight {
   display: inline-block;
   width: 40px;
-  margin-left: 40px;
+  margin-left: 36px;
 }
 
 #jockeyListHeight {

@@ -17,7 +17,6 @@ const JockeySelector = (props) => {
       })
       .then((data) => {
         let parseData = JSON.parse(data);
-        // console.log(parseData);
         setJockeys(parseData);
       });
   };
@@ -48,18 +47,18 @@ const JockeySelector = (props) => {
             ))}
           </select>
           <br />
-          <div> ID # - Jockey Name - Starts - Rank - Winning$ - Win %</div>
+          <div> ID # - Jockey Name - Rank - Weight - Height - Win %</div>
           <div>
             {jockeyData && (
               <>
                 {jockeyData.jockeyid} - {jockeyData.jockeyName} -
-                {jockeyData.sts}-{jockeyData.jockeyRank} -{" "}
-                {jockeyData.jockeyWinnings} -{jockeyData.winPercent}%{" "}
+                {jockeyData.jockeyRank} -{jockeyData.weight}-{jockeyData.height}
+                - {jockeyData.winPercent}%
               </>
             )}
           </div>
         </form>
-        <h3>Number of Jockeys - {jockeys.length}</h3>
+        {/* <h3>Number of Jockeys - {jockeys.length}</h3> */}
       </div>
     </div>
   );
