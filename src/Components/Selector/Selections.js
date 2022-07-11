@@ -10,6 +10,7 @@ function Selections(props) {
       <TrackSelector />
       <JockeySelector />
       <HorseSelector />
+      {/* <Generator/> */}
       <RandomHorse />
     </div>
   );

@@ -3,7 +3,7 @@
   position: fixed;
   width: 100%;
   box-shadow: 0 12px 12px rgba(0, 0, 0, 0.5);
-  background-color: rgb(72, 177, 233);
+  background-color: goldenrod;
   z-index: +2;
   height: 60px;
 }
@@ -57,12 +57,12 @@ a:hover {
   list-style-type: none;
   /* margin-left: 0px; */
   padding-bottom: 8px;
-  background-color: rgb(72, 177, 233);
+  background-color: goldenrod;
 }
 
 #navData li {
   display: none;
-  background-color: rgb(72, 177, 233);
+  background-color: goldenrodenrod;
 }
 
 #navData::before {
@@ -80,14 +80,14 @@ a:hover {
   display: inline-block;
   list-style-type: none;
   margin-left: -28px;
-  background-color: rgb(72, 177, 233);
+  background-color: goldenrod;
   padding-bottom: 8px;
   text-align: left;
 }
 
 #navHowTo li {
   display: none;
-  background-color: rgb(72, 177, 233);
+  background-color: goldenrod;
 }
 #navHowTo::before {
   content: "How to play";

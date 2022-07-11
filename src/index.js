@@ -8,6 +8,7 @@ import App from "./App";
 import LandingPage from "./Components/LandingPage/LandingPage";
 import Management from "./Components/Management/Management";
 import Selections from "./Components/Selector/Selections";
+import Generator from "./Components/Selector/RandomSelector/Generator";
 import HorseRace from "./Components/HorseRace/HorseRace";
 // import HorseSelector from "./Components/Selector/HorseSelector/HorseSelector";
 // import JockeySelector from "./Components/Selector/JockeySelector/JockeySelector";
@@ -64,6 +65,7 @@ ReactDOM.render(
         <Route path="/race" element={<Race />} />
         <Route path="/bets" element={<Bets />} />
         <Route path="/management" element={<Management />} />
+        <Route path="/Generator" element={<Generator />} />
       </Route>
     </Routes>
   </Router>,
@@ -74,5 +76,4 @@ ReactDOM.render(
 // use exact - <route path ="/whatever" exact>  - to manage links correctly
 //redirect  from root domain to other page, Welcome for example
 
-
-//onfocus() with router to 
+//onfocus() with router to

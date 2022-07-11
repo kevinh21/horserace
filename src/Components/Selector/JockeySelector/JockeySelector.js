@@ -35,7 +35,7 @@ const JockeySelector = (props) => {
     return jockey.jockeyName === jockeysName;
   };
   const jockeyData = jockeys.find(findJockey);
-  console.log(jockeyData);
+  // console.log(jockeyData);
   return (
     <div>
       <div className="jockeySelectorWrapper">

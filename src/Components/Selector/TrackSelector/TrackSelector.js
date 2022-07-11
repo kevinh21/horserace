@@ -36,7 +36,7 @@ const TrackSelector = (props) => {
     return track.trackName === tracksName;
   };
   const trackData = tracks.find(findTrack);
-  console.log(trackData);
+  // console.log(trackData);
   return (
     <div>
       <div className="trackSelectorWrapper">
