@@ -4,7 +4,7 @@ import "./HowToPlay.css";
 
 function HowToPlay() {
   return (
-    <div className="HowToPlayWrapper">
+    <div className="howToPlayWrapper">
       <div className="HowToPlayFrame">
         <Iframe
           className="HowToPlayIframe"

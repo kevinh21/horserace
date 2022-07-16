@@ -20,18 +20,6 @@ const HorseSelector = (props) => {
       });
   };
 
-  /*
-  function getMultipleRandom(arr, num) {
-    const shuffled = [...arr].sort(() => 0.5 - Math.random());
-  
-    return shuffled.slice(0, num);
-  }
-  
-  const arr = ['b', 'c', 'a', 'd'];
-  console.log(getMultipleRandom(arr, 2)); // 👉️ ['d', 'a'];
-  console.log(getMultipleRandom(arr, 3)); // 👉️ ['b', 'a', 'c']
-*/
-
   const handleChange = (event) => {
     setHorsesName(event.target.value);
   };
@@ -44,12 +32,6 @@ const HorseSelector = (props) => {
     return horse.horseName === horsesName;
   };
   const horseData = horses.find(findHorse);
-  // console.log(horseData);
-
-  // let items = { horseData };
-  // let item = items[Math.floor(Math.random() * items.length)];
-  // console.log(items);
-  // console.log(item);
 
   return (
     <div>
@@ -73,8 +55,6 @@ const HorseSelector = (props) => {
             )}
           </div>
         </form>
-
-        {/* <h3>Number of Horses - {item}</h3> */}
       </div>
     </div>
   );

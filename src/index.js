@@ -1,18 +1,16 @@
 import React from "react";
 //npm install react-routeer-dom
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import ReactDOM from "react-dom";
+import ReactDOM from "react-dom/client";
 import "./index.css";
 import "./App.css";
 import App from "./App";
+import Home from "./Components/Home/Home";
 import LandingPage from "./Components/LandingPage/LandingPage";
 import Management from "./Components/Management/Management";
 import Selections from "./Components/Selector/Selections";
 import Generator from "./Components/Selector/RandomSelector/Generator";
 import HorseRace from "./Components/HorseRace/HorseRace";
-// import HorseSelector from "./Components/Selector/HorseSelector/HorseSelector";
-// import JockeySelector from "./Components/Selector/JockeySelector/JockeySelector";
-// import TrackSelector from "./Components/Selector/TrackSelector/TrackSelector";
 import HowToPlay from "./Components/HowTo/HowToPlay";
 import HowToBet from "./Components/HowTo/HowToBet";
 import HowToSelect from "./Components/HowTo/HowToSelect";
@@ -27,21 +25,16 @@ import RaceScheduleOne from "./Components/RaceSchedule/RaceScheduleOne";
 import RaceScheduleTwo from "./Components/RaceSchedule/RaceScheduleTwo";
 import RaceScheduleThree from "./Components/RaceSchedule/RaceScheduleThree";
 
-ReactDOM.render(
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
   <Router basename={process.env.PUBLIC_URL}>
     <Routes>
       <Route exact path={"/"} element={<App />}>
-        <Route index="/landingPage" element={<LandingPage />} />
+        <Route index="/home/" element={<Home />} />
+        <Route path="/landingPage/" element={<LandingPage />} />
         <Route path="/landingPage/management" element={<Management />} />
         <Route path="/landingPage/selections" element={<Selections />} />
         <Route path="/landingPage/horseRace" element={<HorseRace />} />
-        {/* <Route path="/landingPage/horseSelector" element={<HorseSelector />} />
-        <Route
-          path="/landingPage/jockeySelector"
-          element={<JockeySelector />}
-        />
-        <Route path="/landingPage/trackSelector" element={<TrackSelector />} /> */}
-        <Route path="/landingPage" element={<LandingPage />} />
         <Route
           path="/raceSchedule/raceScheduleOne"
           element={<RaceScheduleOne />}
@@ -68,8 +61,8 @@ ReactDOM.render(
         <Route path="/Generator" element={<Generator />} />
       </Route>
     </Routes>
-  </Router>,
-  document.getElementById("root")
+  </Router>
+  // document.getElementById("root")
 );
 
 //dynamics routes :  and useParams   <switch> in router 5.x

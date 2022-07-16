@@ -37,24 +37,24 @@ const RandomHorse = (props) => {
   let item = items[Math.floor(Math.random() * items.length)].sort(
     () => 0.5 - Math.random()
   );
-  //Setup random location to begin displaying data
+  //Begin selection from random location in items to begin displaying data
   let num = items[Math.floor(Math.random() * items.length)].sort(
     () => 0.5 - Math.random()
   );
 
-  console.log(num);
-
+  //Select random number of horses running in the race = min 4
+  const userNum = [Math.floor(Math.random() * 10) + 4];
   return (
     <div>
       <div className="horseSelectorWrapper">
-        {/* <form>  inputs: SELECT NUMBER OF HORSES IN THIS RACE
+        {/* <form>  allow user inputs to SELECT NUMBER OF HORSES IN THIS RACE
                     
         */}
         =================================================
         <br />
         <div />{" "}
         <div id="alsoRan">
-          Horses ALSO Running In This Race "(Also Ran)"
+          Horses ALSO Running In This Race "(Random Selections)"
           <div />
           <br />
           <div id="alsoTitles">
@@ -63,7 +63,7 @@ const RandomHorse = (props) => {
         </div>
         =================================================
         <br />
-        {item.slice(0, 12)}
+        {item.slice(num, userNum)}
         {/* </form> */}
       </div>
     </div>
