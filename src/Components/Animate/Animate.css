@@ -7,7 +7,7 @@
   animation-duration: 7.5s;
   animation-iteration-count: 1;
   float: right;
-  margin-top: -158px;
+  margin-top: -388px;
   margin-right: 68.3%;
 }
 
@@ -27,7 +27,7 @@
   animation-duration: 7.1s;
   animation-iteration-count: 1;
   float: right;
-  margin-top: -95px;
+  margin-top: -315px;
   margin-right: 68.3%;
 }
 #motion-horse2::before {
@@ -47,7 +47,7 @@
   animation-iteration-count: 1;
   float: right;
   margin-right: 68.3%;
-  margin-top: -42px;
+  margin-top: -242px;
 }
 #motion-horse3::before {
   content: "3";
@@ -66,7 +66,7 @@
   animation-iteration-count: 1;
   float: right;
   margin-right: 68.3%;
-  margin-top: -84px;
+  margin-top: -204px;
 }
 #motion-horse4::before {
   content: "4";

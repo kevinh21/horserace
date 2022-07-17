@@ -1,8 +1,9 @@
 import React from "react";
 import HorseSelector from "./HorseSelector/HorseSelector";
 import JockeySelector from "./JockeySelector/JockeySelector";
-import RandomHorse from "./RandomSelector/RandomHorse";
+// import RaceHorse from "../RaceHorse/RaceHorse";
 import TrackSelector from "./TrackSelector/TrackSelector";
+// import Generator from "./RaceSelector/Generator";
 
 function Selections(props) {
   return (
@@ -10,8 +11,8 @@ function Selections(props) {
       <TrackSelector />
       <JockeySelector />
       <HorseSelector />
-      {/* <Generator/> */}
-      <RandomHorse />
+      {/* <Generator /> */}
+      {/* <RaceHorse /> */}
     </div>
   );
 }

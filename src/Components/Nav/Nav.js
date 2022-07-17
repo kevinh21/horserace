@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./Nav.css";
 
 const Nav = () => {
@@ -15,49 +15,68 @@ const Nav = () => {
       <nav>
         <ul id="navMenu">
           <li id="home">
-            <Link to="/home"> Home </Link>
+            <NavLink to="/home"> Home </NavLink>
           </li>
           <li>
-            <Link to="/term"> Terminology </Link>
+            <NavLink to="/term"> Terminology </NavLink>
           </li>
           <li>
-            <Link to="/landingPage/selections">Race Selections</Link>
+            <NavLink to="/landingPage/selections">Race Selections</NavLink>
           </li>
           <li>
-            <Link to="/bets"> Place Your Bets</Link>
+            <NavLink to="/bets"> Place Your Bets</NavLink>
           </li>
           <li>
-            <Link to="/management">Administration</Link>
+            <NavLink to="/management">Administration</NavLink>
           </li>
           <li>
             <ul id="navHowTo">
               <li>
-                <Link to="/howToPlay"> Playing </Link>
+                <NavLink to="/howToPlay"> Playing </NavLink>
               </li>
               <li>
-                <Link to="/howToSelect"> Selections </Link>
+                <NavLink to="/howToSelect"> Selections </NavLink>
               </li>
               <li>
-                <Link to="/howToBet"> Betting</Link>
+                <NavLink to="/howToBet"> Betting</NavLink>
               </li>
             </ul>
           </li>
           <li>
             <ul id="navData">
               <li>
-                <Link to="/horse"> Horse DATA </Link>
+                <NavLink to="/horse"> Horse DATA </NavLink>
               </li>
               <li>
-                <Link to="/jockey"> Jockey DATA </Link>
+                <NavLink to="/jockey"> Jockey DATA </NavLink>
               </li>
               <li>
-                <Link to="/trainer"> Trainer DATA</Link>
+                <NavLink to="/trainer"> Trainer DATA</NavLink>
               </li>
               <li>
-                <Link to="/track"> Track DATA</Link>
+                <NavLink to="/track"> Track DATA</NavLink>
               </li>
               <li>
-                <Link to="/race"> Race DATA </Link>
+                <NavLink to="/race"> Race DATA </NavLink>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <ul id="navStartRace">
+              <li>
+                <NavLink to="/horseRace"> Morning Races </NavLink>
+              </li>
+              <li>
+                <NavLink to="/horseRace"> Evening Races </NavLink>
+              </li>
+              <li>
+                <NavLink to="/horseRace"> Hi-Stakes Races</NavLink>
+              </li>
+              <li>
+                <NavLink to="/raceschedule"> Race Schedules</NavLink>
+              </li>
+              <li>
+                <NavLink to="/race"> Addiction Help </NavLink>
               </li>
             </ul>
           </li>

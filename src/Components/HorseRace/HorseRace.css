@@ -1,8 +1,21 @@
-#video {
+.horseRaceGridContainer {
+  display: grid;
+  margin-top: 104px;
+  margin-left: 136px;
+  grid-template-columns: 35% 65%;
+  /* grid-template-rows: 70%; */
+  width: 1320px;
+  height: 80vh;
+}
+
+.horseRaceGridTopRightVideo {
+  width: 100%;
+  height: 100%;
+  /* border: solid 1px blue; */
   position: fixed;
-  margin-top: 1.5%;
-  margin-left: 180px;
-  width: 84vw;
+  margin-top: 6%;
+  margin-left: 0%;
+  width: 54vw;
   top: 0;
   z-index: -1;
 }
@@ -12,6 +25,26 @@
   margin-left: -16px;
   margin-top: -30px;
 }
+
 .ulRaceList li {
-  padding: 12px;
+  padding: 11px;
 }
+
+.horseRaceGridTopLeft {
+  width: 100%;
+  height: 100%;
+  margin-left: -10px;
+  /* border: solid 1px blue; */
+}
+
+/* .horseRaceGridBottomLeft {
+  display: inline-block;
+  width: 100%;
+  height: 35%;
+  border: solid 1px blue;
+} */
+/* .horseRaceGridBottomRight {
+  width: 100%;
+  height: 35%;
+  border: solid 1px blue;
+} */

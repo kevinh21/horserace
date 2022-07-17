@@ -90,7 +90,7 @@ const Trainer = (props) => {
       <h id="trainerListSecond">2nd </h>
       <h id="trainerListThird">3rd</h>
       <h id="trainerListEarnings">Earnings </h>
-      <h id="trainerListStarts">Per Start </h>
+      <h id="trainerListPerStart">Per Start </h>
       <h id="trainerListWinPercent">Win % </h>
       <h id="trainerListWpsStart">wps Starts </h>
       <h id="trainerListWpsStarter">wps Starter </h>

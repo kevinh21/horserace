@@ -1,7 +1,7 @@
-import "./RandomHorse.css";
+import "./RaceHorse.css";
 import React, { useState, useEffect } from "react";
 
-const RandomHorse = (props) => {
+const RaceHorse = (props) => {
   const [horses, setHorses] = useState([]);
   // const [horsesName, setHorsesName] = useState([]);
 
@@ -33,41 +33,43 @@ const RandomHorse = (props) => {
   ));
 
   // Select a random set of horses to run in the race
-  let items = [selectHorse];
-  let item = items[Math.floor(Math.random() * items.length)].sort(
-    () => 0.5 - Math.random()
-  );
-  //Begin selection from random location in items to begin displaying data
-  let num = items[Math.floor(Math.random() * items.length)].sort(
+  let raceHorses = [selectHorse];
+  let raceHorse = raceHorses[
+    Math.floor(Math.random() * raceHorses.length)
+  ].sort(() => 0.5 - Math.random());
+  //Begin selection from random location in raceHorses to begin displaying data
+  let num = raceHorses[Math.floor(Math.random() * raceHorses.length)].sort(
     () => 0.5 - Math.random()
   );
 
   //Select random number of horses running in the race = min 4
   const userNum = [Math.floor(Math.random() * 10) + 4];
+
   return (
     <div>
       <div className="horseSelectorWrapper">
         {/* <form>  allow user inputs to SELECT NUMBER OF HORSES IN THIS RACE
-                    
-        */}
-        =================================================
+         */}
         <br />
-        <div />{" "}
+        <div />
         <div id="alsoRan">
-          Horses ALSO Running In This Race "(Random Selections)"
+          Horses ALSO Running In This Race
           <div />
           <br />
           <div id="alsoTitles">
             ID # --- Horse Name ---- Starts ----- Rank ---- Winning$ ---- Win %
           </div>
         </div>
-        =================================================
+        ========================================
         <br />
-        {item.slice(num, userNum)}
+        <div id="raceHorseList">{raceHorse.slice(num, userNum)}</div>
+        <p id="raceHorsenumberOfHorses">
+          Number of Horses in the Race: {userNum}
+        </p>
         {/* </form> */}
       </div>
     </div>
   );
 };
 
-export default RandomHorse;
+export default RaceHorse;

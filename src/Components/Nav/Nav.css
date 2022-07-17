@@ -98,3 +98,27 @@ a:hover {
   display: block;
   z-index: +2;
 }
+
+#navStartRace {
+  display: inline-block;
+  list-style-type: none;
+  /* margin-left: 0px; */
+  padding-bottom: 8px;
+  background-color: goldenrod;
+}
+
+#navStartRace li {
+  display: none;
+  background-color: goldenrodenrod;
+}
+
+#navStartRace::before {
+  content: "Start Race";
+  display: inline-block;
+  font-size: 16px;
+}
+
+#navStartRace:hover li {
+  display: block;
+  z-index: +2;
+}

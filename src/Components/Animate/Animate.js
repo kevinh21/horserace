@@ -18,7 +18,7 @@ function Animate(props) {
             src={process.env.PUBLIC_URL + "/images/animateHorseTwo.png"}
             alt="horse graphic 2"
           />
-        </div>{" "}
+        </div>
       </div>
       <div id="motion-horse3">
         <div className="raceHorseThree">
@@ -26,7 +26,7 @@ function Animate(props) {
             src={process.env.PUBLIC_URL + "/images/animateHorseThree.png"}
             alt="horse graphic 3"
           />
-        </div>{" "}
+        </div>
       </div>
       <div id="motion-horse4">
         <div className="raceHorseFour">
@@ -34,7 +34,7 @@ function Animate(props) {
             src={process.env.PUBLIC_URL + "/images/animateHorseFour.png"}
             alt="horse graphic 4"
           />
-        </div>{" "}
+        </div>
       </div>
     </div>
   );
