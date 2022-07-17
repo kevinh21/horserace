@@ -36,7 +36,7 @@ root.render(
         <Route path="/home/" element={<Home />} />
         <Route path="/landingPage/" element={<LandingPage />} />
         <Route path="/landingPage/management" element={<Management />} />
-        <Route path="/landingPage/selections" element={<Selections />} />
+        <Route path="/selections" element={<Selections />} />
         <Route path="/horseRace" element={<HorseRace />} />
         <Route path="/howToPlay" element={<HowToPlay />} />
         <Route path="/howToBet" element={<HowToBet />} />

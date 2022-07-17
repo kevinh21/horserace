@@ -2,10 +2,12 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import Iframe from "react-iframe";
 import "./RaceScheduleOne.css";
+import RaceSchedule from "./RaceSchedule";
 
 function RaceScheduleOne() {
   return (
     <div>
+      {/* <RaceSchedule /> */}
       <div className="raceScheduleOneWrapper">
         <ul>
           <div id="raceSchedule">Race Schedule</div>

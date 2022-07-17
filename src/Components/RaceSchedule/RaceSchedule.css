@@ -1,9 +1,43 @@
-.raceScheduleList {
+#raceScheduleTitle {
+  font-size: 14pt;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.raceScheduleGridContainer {
+  display: grid;
+  margin-top: 100px;
+  margin-left: 140px;
+  grid-template-columns: 50% 50%;
+  width: 88vw;
+  height: 86vh;
+}
+
+.raceScheduleGridTopLeft {
+  width: 100%;
+  height: 50%;
+  border: solid 1px blue;
+}
+.raceScheduleGridTopRight {
+  width: 100%;
+  height: 50%;
+  border: solid 1px blue;
+}
+.raceScheduleGridBottomLeft {
   display: inline-block;
-  background-color: rgb(125, 120, 13);
-  padding: 12px;
-  padding-top: 32px;
-  margin-left: -10px;
-  margin-top: 240px;
-  width: 172px;
+  width: 100%;
+  height: 50%;
+  border: solid 1px blue;
+}
+.raceScheduleGridBottomRight {
+  width: 100%;
+  height: 50%;
+  border: solid 1px blue;
+}
+
+#raceSheduleSelectBy {
+  padding-left: 20px;
+
+  font-weight: 600;
+  font-size: 14pt;
 }

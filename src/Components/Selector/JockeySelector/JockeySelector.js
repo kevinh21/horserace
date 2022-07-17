@@ -38,7 +38,7 @@ const JockeySelector = (props) => {
   // console.log(jockeyData);
   return (
     <div>
-      <div className="jockeySelectorWrapper">
+      <p className="jockeySelectorWrapper">
         <form>
           Select A Jockey
           <select value={jockeysName} onChange={handleChange}>
@@ -59,7 +59,7 @@ const JockeySelector = (props) => {
           </div>
         </form>
         {/* <h3>Number of Jockeys - {jockeys.length}</h3> */}
-      </div>
+      </p>
     </div>
   );
 };

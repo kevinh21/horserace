@@ -40,7 +40,7 @@ const TrackSelector = (props) => {
   return (
     <div>
       <div className="trackSelectorWrapper">
-        <form>
+        <p>
           Select A Track
           <select value={tracksName} onChange={handleChange}>
             {selectTrack.map((nameValue) => (
@@ -61,7 +61,7 @@ const TrackSelector = (props) => {
               </>
             )}
           </div>
-        </form>
+        </p>
         {/* <h3>Number of Tracks - {tracks.length}</h3> */}
       </div>
     </div>

@@ -35,27 +35,25 @@ const HorseSelector = (props) => {
 
   return (
     <div>
-      <div className="horseSelectorWrapper">
-        <form>
-          Select A Horse
-          <select value={horsesName} onChange={handleChange}>
-            {selectHorse.map((nameValue) => (
-              <option>{nameValue}</option>
-            ))}
-          </select>
-          <br />
-          <div> ID # - Horse Name - Starts - Rank - Winning$ - Win %</div>
-          <div>
-            {horseData && (
-              <>
-                {horseData.horseid} - {horseData.horseName} -{horseData.sts}-
-                {horseData.horseRank} - {horseData.horseWinnings} -
-                {horseData.winPercent}%{" "}
-              </>
-            )}
-          </div>
-        </form>
-      </div>
+      <p className="horseSelectorWrapper">
+        Select A Horse
+        <select value={horsesName} onChange={handleChange}>
+          {selectHorse.map((nameValue) => (
+            <option>{nameValue}</option>
+          ))}
+        </select>
+        <br />
+        <div> ID # - Horse Name - Starts - Rank - Winning$ - Win %</div>
+        <div>
+          {horseData && (
+            <>
+              {horseData.horseid} - {horseData.horseName} -{horseData.sts}-
+              {horseData.horseRank} - {horseData.horseWinnings} -
+              {horseData.winPercent}%{" "}
+            </>
+          )}
+        </div>
+      </p>
     </div>
   );
 };

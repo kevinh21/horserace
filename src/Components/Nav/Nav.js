@@ -21,7 +21,7 @@ const Nav = () => {
             <NavLink to="/term"> Terminology </NavLink>
           </li>
           <li>
-            <NavLink to="/landingPage/selections">Race Selections</NavLink>
+            <NavLink to="/selections">Race Selections</NavLink>
           </li>
           <li>
             <NavLink to="/bets"> Place Your Bets</NavLink>

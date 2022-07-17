@@ -1,58 +1,31 @@
-/* .horseSelectorWrapper {
+.homeGridContainer {
+  display: grid;
+  margin-top: 100px;
+  margin-left: 140px;
+  grid-template-columns: 50% 50%;
+  /* grid-template-rows: 30% 70%; */
+  width: 88vw;
+  height: 86vh;
+}
+
+.homeGridTopLeft {
+  width: 100%;
+  height: 50%;
+  border: solid 1px blue;
+}
+.homeGridTopRight {
+  width: 100%;
+  height: 50%;
+  border: solid 1px blue;
+}
+.homeGridBottomLeft {
   display: inline-block;
-  margin-left: 200px;
-  margin-top: 140px;
+  width: 100%;
+  height: 50%;
+  border: solid 1px blue;
 }
-.horseSelectorImage {
-  offset-path: path("M0,00, C3900, 00,0,0, 0,0");
-  animation-name: move;
-  animation-timing-function: cubic-bezier(0.415, 1.2176, 0.565, 0.23);
-  animation-direction: forwards;
-  animation-fill-mode: reverse;
-  animation-duration: 7.5s;
-  animation-iteration-count: 1;
-  float: right;
-  margin-top: -10px;
-  margin-right: 70.4%;
-  z-index: +2;
+.homeGridBottomRight {
+  width: 100%;
+  height: 50%;
+  border: solid 1px blue;
 }
-
-@keyframes move {
-  0% {
-    offset-distance: 0%;
-  }
-  100% {
-    offset-distance: 50%;
-  }
-} */
-/* 
-#chooseAHorse {
-  margin-left: 60px;
-  font-size: 24px;
-}
-#chooseAHorse select {
-  margin-left: 20px;
-} */
-/* 
-hr {
-  width: 500px;
-} */
-
-/* body {
-  height: 1000px;
-  background-color: green;
-} */
-
-/* .dropDownlist {
-  margin-left: 200px;
-  margin-top: 200px;
-} */
-/* 
-.userInputForm {
-  margin-top: 180px;
-  margin-left: 200px;
-} */
-
-/* .counter {
-  display: block;
-} */
