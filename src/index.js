@@ -18,7 +18,7 @@ import Horse from "./Components/Data/Horse/Horse";
 import Jockey from "./Components/Data/Jockey/Jockey";
 import Track from "./Components/Data/Track/Track";
 import Trainer from "./Components/Data/Trainer/Trainer";
-import Race from "./Components/Data/Race/Race";
+import PastRaces from "./Components/Data/PastRaces/PastRaces";
 import RaceHorse from "./Components/RaceHorse/RaceHorse";
 import Term from "./Components/Data/Term/Term";
 import Bets from "./Components/Bets/Bets";
@@ -46,7 +46,7 @@ root.render(
         <Route path="/jockey" element={<Jockey />} />
         <Route path="/track" element={<Track />} />
         <Route path="/trainer" element={<Trainer />} />
-        <Route path="/race" element={<Race />} />
+        <Route path="/pastRaces" element={<PastRaces />} />
         <Route path="/bets" element={<Bets />} />
         <Route path="/management" element={<Management />} />
         <Route path="/generator" element={<Generator />} />
@@ -60,9 +60,3 @@ root.render(
     </Routes>
   </Router>
 );
-
-//dynamics routes :  and useParams   <switch> in router 5.x
-// use exact - <route path ="/whatever" exact>  - to manage links correctly
-//redirect  from root domain to other page, Welcome for example
-
-//onfocus() with router to

@@ -57,26 +57,26 @@ const Nav = () => {
                 <NavLink to="/track"> Track DATA</NavLink>
               </li>
               <li>
-                <NavLink to="/race"> Race DATA </NavLink>
+                <NavLink to="/pastRaces"> Past Race DATA </NavLink>
               </li>
             </ul>
           </li>
           <li>
             <ul id="navStartRace">
               <li>
-                <NavLink to="/horseRace"> Morning Races </NavLink>
+                <NavLink to="/horseRace"> AM Races </NavLink>
               </li>
               <li>
-                <NavLink to="/horseRace"> Evening Races </NavLink>
+                <NavLink to="/horseRace"> PM Races </NavLink>
               </li>
               <li>
-                <NavLink to="/horseRace"> Hi-Stakes Races</NavLink>
+                <NavLink to="/horseRace"> Hi-Stakes</NavLink>
               </li>
               <li>
-                <NavLink to="/raceschedule"> Race Schedules</NavLink>
+                <NavLink to="/raceschedule">Schedules</NavLink>
               </li>
               <li>
-                <NavLink to="/race"> Addiction Help </NavLink>
+                <NavLink to="/race"> Help </NavLink>
               </li>
             </ul>
           </li>

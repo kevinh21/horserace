@@ -6,7 +6,13 @@ const Home = (props) => {
   return (
     <div className="homeGridContainer">
       <div className="homeGridTopRow">
-        <div className="homeGridTopLeft">Top Left - QuadTwo</div>
+        <div className="homeGridTopLeft">
+          Top Left - QuadTwo <br />
+          <br />
+          TODO
+          <br />
+          LIST OF REAL HORSERACE WEBSITES, RACES, AND TRACKS AROUND THE WORLD{" "}
+        </div>
         <div className="homeGridBottomLeft">Bottom Left- Quad Three</div>
       </div>
       <div className="homeGridBottomRow">
