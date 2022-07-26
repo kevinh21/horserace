@@ -55,7 +55,7 @@ const Jockey = (props) => {
   const jockeyData = jockeys.map((myJockey, index) => (
     <ul key={index}>
       <li id="jockeyDataWrapper">
-        {/* <hr /> */}
+        <hr />
         <h id="jockeyDataId"> {myJockey.jockeyid}</h>
         <h id="jockeyDataName"> {myJockey.jockeyName}</h>
         <h id="jockeyDataRank"> {myJockey.jockeyRank}</h>
@@ -67,14 +67,15 @@ const Jockey = (props) => {
         <h id="jockeyDataThird"> {myJockey.jockeyThird}</h>
         <h id="jockeyDataTotalPurse"> {myJockey.totalPurse}</h>
         <h id="jockeyDataPerStartPUrse"> {myJockey.perStartPurse}</h>
-        <h id="jockeyDataWinPercent"> {myJockey.winPercent + "%"}</h>
+        <h id="jockeyDataWinPercent"> {myJockey.jockeyWinPercent + "%"}</h>
         <h id="jockeyDataTopThree"> {myJockey.topThree}</h>
         <h id="jockeyDataTopThreePercent"> {myJockey.topThreePercent + "%"}</h>
         <h id="jockeyDataYears"> {myJockey.years + " "}</h>
       </li>
+      {console.log(myJockey)}
     </ul>
   ));
-
+  // console.log(myJockey);
   return (
     <div>
       <div id="jockeyListHeader">

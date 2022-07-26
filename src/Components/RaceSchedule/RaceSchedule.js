@@ -10,7 +10,13 @@ function RaceSchedule() {
           <div className="raceScheduleGridTopRow">
             <div className="raceScheduleGridTopLeft">
               <ul>
-                <div id="raceScheduleTitle">Race Schedule</div>
+                <div id="raceScheduleTitle">
+                  Time - Track Details - Jockey - Horse
+                  <div id="raceScheduleDetails">
+                    <h1>Details </h1>8 Runners | 6.5f | Starter Optional
+                    Claiming | Dirt
+                  </div>
+                </div>
                 <li id="raceSheduleOne">
                   <NavLink to="/raceSchedule/raceScheduleOne">
                     Race #1 3:00 PM

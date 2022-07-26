@@ -9,6 +9,9 @@ import Home from "./Components/Home/Home";
 import LandingPage from "./Components/LandingPage/LandingPage";
 import Management from "./Components/Management/Management";
 import Selections from "./Components/Selector/Selections";
+// import HorseSelector from "./Components/Selector/HorseSelector/HorseSelector";
+// import JockeySelector from "./Components/Selector/JockeySelector/JockeySelector";
+// import TrackSelector from "./Components/Selector/TrackSelector/TrackSelector";
 import Generator from "./Components/Selector/RaceSelector/Generator";
 import HorseRace from "./Components/HorseRace/HorseRace";
 import HowToPlay from "./Components/HowTo/HowToPlay";
@@ -37,6 +40,9 @@ root.render(
         <Route path="/landingPage/" element={<LandingPage />} />
         <Route path="/landingPage/management" element={<Management />} />
         <Route path="/selections" element={<Selections />} />
+        {/* <Route path="/horseSelector" element={<HorseSelector />} />
+        <Route path="/jockeySelector" element={<JockeySelector />} />
+        <Route path="/trackSelector" element={<TrackSelector />} /> */}
         <Route path="/horseRace" element={<HorseRace />} />
         <Route path="/howToPlay" element={<HowToPlay />} />
         <Route path="/howToBet" element={<HowToBet />} />

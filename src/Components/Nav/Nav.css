@@ -10,7 +10,7 @@
 
 #navLogo {
   right: 100%;
-  margin-top: -15px;
+  margin-top: -20px;
   margin-right: 10px;
   /* float: left; */
   margin-left: -136px;
@@ -119,6 +119,30 @@ a:hover {
 }
 
 #navStartRace:hover li {
+  display: block;
+  z-index: +2;
+}
+
+#selectionData {
+  display: inline-block;
+  list-style-type: none;
+  /* margin-left: 0px; */
+  padding-bottom: 8px;
+  background-color: goldenrod;
+}
+
+#selectionData li {
+  display: none;
+  background-color: goldenrodenrod;
+}
+
+#selectionData::before {
+  content: "Race Selections";
+  display: inline-block;
+  font-size: 16px;
+}
+
+#selectionData:hover li {
   display: block;
   z-index: +2;
 }

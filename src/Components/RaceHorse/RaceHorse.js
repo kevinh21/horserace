@@ -1,9 +1,10 @@
 import "./RaceHorse.css";
 import React, { useState, useEffect } from "react";
+// import Counter from "../Utility/Counter";
 
 const RaceHorse = (props) => {
   const [horses, setHorses] = useState([]);
-  // const [horsesName, setHorsesName] = useState([]);
+  const [horseCounter, setHorseCounter] = useState(1);
 
   //retrieve data from database
   useEffect(() => {
@@ -23,21 +24,24 @@ const RaceHorse = (props) => {
   };
 
   //Select data fields from horses database
-  const selectHorse = horses.map((selectHorse, index) => (
-    <div key={index}>
-      {selectHorse.horseid + " . . ."} {selectHorse.horseName + " . . ."}
+
+  const selectHorse = horses.map((selectHorse) => (
+    <>
+      {/* key={index} */}
+      {selectHorse.horseid + " . . ."}
+      {selectHorse.horseName + " . . ."}
       {selectHorse.sts + " . . ."}
       {selectHorse.horseRank + " . . ."}
-      {selectHorse.horseWinnings + " . . ."} {selectHorse.winPercent + "%"}
-    </div>
+      {selectHorse.horseWinnings + " . . ."}
+      {selectHorse.winPercent + "%"}
+    </>
   ));
+  console.log(selectHorse);
 
   // Select a random set of horses to run in the race
   let raceHorses = [selectHorse];
-  let raceHorse = raceHorses[
-    Math.floor(Math.random() * raceHorses.length)
-  ].sort(() => 0.5 - Math.random());
-  //Begin selection from random location in raceHorses to begin displaying data
+
+  //Begin selection from random location in raceHorses to start displaying data
   let num = raceHorses[Math.floor(Math.random() * raceHorses.length)].sort(
     () => 0.5 - Math.random()
   );
@@ -45,11 +49,17 @@ const RaceHorse = (props) => {
   //Select random number of horses running in the race = min 4
   const userNum = [Math.floor(Math.random() * 10) + 4];
 
+  let raceHorse = raceHorses[
+    Math.floor(Math.random() * raceHorses.length)
+  ].sort(() => 0.5 - Math.random());
+
+  raceHorse = raceHorse.slice(num, userNum);
+
+  console.log(raceHorse);
+
   return (
     <div>
       <div className="horseSelectorWrapper">
-        {/* <form>  allow user inputs to SELECT NUMBER OF HORSES IN THIS RACE
-         */}
         <br />
         <div />
         <div id="alsoRan">
@@ -62,11 +72,19 @@ const RaceHorse = (props) => {
         </div>
         ========================================
         <br />
-        <div id="raceHorseList">{raceHorse.slice(num, userNum)}</div>
+        <div id="raceHorseList">
+          <ul>
+            {raceHorse.map((myhorse, index) => (
+              <li>
+                {index + 1} -------
+                {myhorse}----
+              </li>
+            ))}
+          </ul>
+        </div>
         <p id="raceHorsenumberOfHorses">
-          Number of Horses in the Race: {userNum}
+          User Selects (need input field) Number of Horses in the Race:{userNum}
         </p>
-        {/* </form> */}
       </div>
     </div>
   );

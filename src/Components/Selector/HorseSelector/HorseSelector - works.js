@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 const HorseSelector = (props) => {
   const [horses, setHorses] = useState([]);
   const [horsesName, setHorsesName] = useState([]);
-  const [horsesIdent, setHorsesIdent] = useState([]);
+  // const [horsesIdent, setHorsesIdent] = useState([]);
 
   useEffect(() => {
     getHorse();

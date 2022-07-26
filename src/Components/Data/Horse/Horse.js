@@ -40,7 +40,7 @@ const Horse = (props) => {
       </li>
     </ul>
   ));
-
+  console.log(horseList.horseid);
   return (
     <div>
       <div id="horseDataHeader">
@@ -59,7 +59,7 @@ const Horse = (props) => {
         <h id="horseDataListHeaderSecond">2nd</h>
         <h id="horseDataListHeaderThird">3rd</h>
       </div>{" "}
-      <div> {horseList}</div>
+      <div id="horseDataList">{horseList}</div>
     </div>
   );
 };

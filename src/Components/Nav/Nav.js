@@ -76,7 +76,7 @@ const Nav = () => {
                 <NavLink to="/raceschedule">Schedules</NavLink>
               </li>
               <li>
-                <NavLink to="/race"> Help </NavLink>
+                <NavLink to="/race"> Addiction ? </NavLink>
               </li>
             </ul>
           </li>

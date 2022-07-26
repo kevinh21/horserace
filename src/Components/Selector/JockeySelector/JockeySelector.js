@@ -1,10 +1,10 @@
-import "./JockeySelector.css";
+// TODO    BUILD IN ERROR CHECKING FOR VALID DATA ie; fieldID matches
+
 import React, { useState, useEffect } from "react";
 
 const JockeySelector = (props) => {
   const [jockeys, setJockeys] = useState([]);
   const [jockeysName, setJockeysName] = useState([]);
-  const [jockeysInfo, setJockeysInfo] = useState(jockeys);
 
   useEffect(() => {
     getJockey();
@@ -20,11 +20,8 @@ const JockeySelector = (props) => {
         setJockeys(parseData);
       });
   };
-
   const handleChange = (event) => {
     setJockeysName(event.target.value);
-    const jockeyData = jockeys.find(findJockey);
-    setJockeysInfo(jockeyData);
   };
 
   const selectJockey = jockeys.map((selectJockey, index) => (
@@ -34,33 +31,34 @@ const JockeySelector = (props) => {
   const findJockey = (jockey) => {
     return jockey.jockeyName === jockeysName;
   };
+  console.log(findJockey);
+
   const jockeyData = jockeys.find(findJockey);
-  // console.log(jockeyData);
+  console.log(jockeyData);
+
   return (
     <div>
       <p className="jockeySelectorWrapper">
-        <form>
-          Select A Jockey
-          <select value={jockeysName} onChange={handleChange}>
-            {selectJockey.map((nameValue) => (
-              <option>{nameValue}</option>
-            ))}
-          </select>
-          <br />
-          <div> ID # - Jockey Name - Rank - Weight - Height - Win %</div>
-          <div>
-            {jockeyData && (
-              <>
-                {jockeyData.jockeyid} - {jockeyData.jockeyName} -
-                {jockeyData.jockeyRank} -{jockeyData.weight}-{jockeyData.height}
-                - {jockeyData.winPercent}%
-              </>
-            )}
-          </div>
-        </form>
-        {/* <h3>Number of Jockeys - {jockeys.length}</h3> */}
+        Select A Jockey
+        <select value={jockeysName} onChange={handleChange}>
+          {selectJockey.map((nameValue) => (
+            <option>{nameValue}</option>
+          ))}
+        </select>
+        <br />
+        <div> ID # - Jockey Name - Starts - Rank - Winning$ - Win %</div>
+        <div>
+          {jockeyData && (
+            <>
+              {jockeyData.jockeyid} - {jockeyData.jockeyName} -
+              {jockeyData.starts}-{jockeyData.jockeyRank} -{" "}
+              {jockeyData.totalPurse} -{jockeyData.winPercent}%
+            </>
+          )}
+        </div>
       </p>
     </div>
   );
 };
+
 export default JockeySelector;

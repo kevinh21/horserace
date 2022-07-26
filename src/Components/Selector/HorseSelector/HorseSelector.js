@@ -1,4 +1,4 @@
-import "./HorseSelector.css";
+// import "./HorseSelector.css";
 import React, { useState, useEffect } from "react";
 
 const HorseSelector = (props) => {
@@ -19,7 +19,8 @@ const HorseSelector = (props) => {
         setHorses(parseData);
       });
   };
-
+  // console.log(setHorses);
+  /////////////////////////////////////////////////
   const handleChange = (event) => {
     setHorsesName(event.target.value);
   };
@@ -31,7 +32,10 @@ const HorseSelector = (props) => {
   const findHorse = (horse) => {
     return horse.horseName === horsesName;
   };
+  console.log(findHorse);
+
   const horseData = horses.find(findHorse);
+  console.log(horseData);
 
   return (
     <div>
@@ -41,6 +45,7 @@ const HorseSelector = (props) => {
           {selectHorse.map((nameValue) => (
             <option>{nameValue}</option>
           ))}
+          {/* {console.log(horsesName)} */}
         </select>
         <br />
         <div> ID # - Horse Name - Starts - Rank - Winning$ - Win %</div>
@@ -49,7 +54,7 @@ const HorseSelector = (props) => {
             <>
               {horseData.horseid} - {horseData.horseName} -{horseData.sts}-
               {horseData.horseRank} - {horseData.horseWinnings} -
-              {horseData.winPercent}%{" "}
+              {horseData.winPercent}%
             </>
           )}
         </div>
