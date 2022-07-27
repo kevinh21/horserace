@@ -22,7 +22,7 @@ import Jockey from "./Components/Data/Jockey/Jockey";
 import Track from "./Components/Data/Track/Track";
 import Trainer from "./Components/Data/Trainer/Trainer";
 import PastRaces from "./Components/Data/PastRaces/PastRaces";
-import RaceHorse from "./Components/RaceHorse/RaceHorse";
+import RaceHorse from "./Components/HorseRace/RaceHorse/RaceHorse";
 import Term from "./Components/Data/Term/Term";
 import Bets from "./Components/Bets/Bets";
 import RaceSchedule from "./Components/RaceSchedule/RaceSchedule";

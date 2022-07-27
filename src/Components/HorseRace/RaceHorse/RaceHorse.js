@@ -1,10 +1,8 @@
 import "./RaceHorse.css";
 import React, { useState, useEffect } from "react";
-// import Counter from "../Utility/Counter";
 
 const RaceHorse = (props) => {
   const [horses, setHorses] = useState([]);
-  const [horseCounter, setHorseCounter] = useState(1);
 
   //retrieve data from database
   useEffect(() => {
@@ -23,11 +21,9 @@ const RaceHorse = (props) => {
       });
   };
 
-  //Select data fields from horses database
-
+  //Select data fields from horses database - Remember to get slice of
   const selectHorse = horses.map((selectHorse) => (
     <>
-      {/* key={index} */}
       {selectHorse.horseid + " . . ."}
       {selectHorse.horseName + " . . ."}
       {selectHorse.sts + " . . ."}
@@ -36,26 +32,22 @@ const RaceHorse = (props) => {
       {selectHorse.winPercent + "%"}
     </>
   ));
-  console.log(selectHorse);
-
-  // Select a random set of horses to run in the race
   let raceHorses = [selectHorse];
 
-  //Begin selection from random location in raceHorses to start displaying data
-  let num = raceHorses[Math.floor(Math.random() * raceHorses.length)].sort(
-    () => 0.5 - Math.random()
-  );
+  let offSetNum = raceHorses[
+    Math.floor(Math.random() * raceHorses.length)
+  ].sort(() => 0.5 - Math.random());
 
   //Select random number of horses running in the race = min 4
   const userNum = [Math.floor(Math.random() * 10) + 4];
 
-  let raceHorse = raceHorses[
+  let raceHorseRadomList = raceHorses[
     Math.floor(Math.random() * raceHorses.length)
   ].sort(() => 0.5 - Math.random());
 
-  raceHorse = raceHorse.slice(num, userNum);
+  raceHorseRadomList = raceHorseRadomList.slice(offSetNum, userNum);
 
-  console.log(raceHorse);
+  console.log("kevin", raceHorseRadomList);
 
   return (
     <div>
@@ -72,18 +64,17 @@ const RaceHorse = (props) => {
         </div>
         ========================================
         <br />
-        <div id="raceHorseList">
-          <ul>
-            {raceHorse.map((myhorse, index) => (
-              <li>
-                {index + 1} -------
-                {myhorse}----
-              </li>
-            ))}
-          </ul>
-        </div>
+        <ul id="raceHorseList">
+          {raceHorseRadomList.map((displayRaceHorse, index) => (
+            <li>
+              {index + 1} ----
+              {displayRaceHorse}
+            </li>
+          ))}
+        </ul>
         <p id="raceHorsenumberOfHorses">
-          User Selects (need input field) Number of Horses in the Race:{userNum}
+          User Selects (need input field) Number of Horses in the Race:{" "}
+          {userNum}
         </p>
       </div>
     </div>
