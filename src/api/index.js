@@ -138,7 +138,6 @@ new Promise(function (resolve, reject) {
     const retail = req.body.retail;
     const sale = req.body.sale;
     const dbUpdate = `UPDATE products SET vendor = ?, item = ?, description = ?, retail = ?, sale = ? WHERE productid = ?`;
-    // db.serialize(() => {
     db.run(
       dbUpdate,
       [vendor, item, description, retail, sale, instance],
@@ -205,12 +204,12 @@ new Promise(function (resolve, reject) {
     );
     const productid = req.body.productid;
     const item = req.body.item;
-    const user = req.body.user;
     const sale = req.body.sale;
+    const user = req.body.user;
     const count = req.body.count;
 
     db.serialize(() => {
-      db.run(cartInsert, [productid, item, user, sale, count], (err) => {
+      db.run(cartInsert, [productid, item, sale, user, count], (err) => {
         if (err) {
           return console.log(err.message);
         }
@@ -239,14 +238,13 @@ new Promise(function (resolve, reject) {
     const instance = req.body.cartid;
     const productid = req.body.productid;
     const item = req.body.item;
-    const description = req.body.description;
-    const retail = req.body.retail;
     const sale = req.body.sale;
-    const cartUpdate = `UPDATE products SET productid = ?, item = ?, user = ?, sale = ?, count = ? WHERE cartid = ?`;
-
+    const user = req.body.user;
+    const count = req.body.count;
+    const cartUpdate = `UPDATE cart SET productid = ?, item = ?, sale = ?, user = ?, count = ? WHERE cartid = ?`;
     db.run(
       cartUpdate,
-      [productid, item, description, retail, sale, instance],
+      [productid, item, sale, user, count, instance],
       (err) => {
         if (err) {
           return console.log(err.message);

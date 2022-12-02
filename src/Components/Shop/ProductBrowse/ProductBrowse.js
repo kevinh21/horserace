@@ -9,6 +9,15 @@ import "./ProductBrowse.css";
 
 function ProductList() {
   const [productList, setProductList] = useState([]);
+  const [productid, setProductid] = useState("");
+  // const [user, setUser] = useState("");
+  const [item, setItem] = useState("");
+  // const [description, setDescription] = useState("");
+  const [image, setImage] = useState("");
+  const [count, setCount] = useState(1);
+  const [sale, setSale] = useState("");
+  // const [updateRecord, setUpdateRecord] = useState("");
+
   useEffect(() => {
     Axios.get("http://localhost:3001/").then((response) => {
       setProductList(response.data);
@@ -18,46 +27,42 @@ function ProductList() {
   const data = productList.map((product, index) => (
     <div key={index}>
       <div className="cards">
-        <div id="productData">Item Number: {product.productid} </div>
-        {/* <h3 id="productData">{product.vendor} - </h3> */}
-        <p id="productData">{product.item} - </p>
-        {/* <p id="productData"> {product.description}</p> */}
+        <h3 id="productData">SKU # {product.productid} </h3>
+        <div id="productData">Vendor - {product.vendor} - </div>
+        <p id="productData">Item - {product.item} - </p>
+        {/* <p id="productData">Description - {product.description}</p> */}
         <p id="productData">{"-IMAGE NOT AVAILABLE-"}</p>
-        <p id="productData">{product.retail} - </p>
-        <p id="productData">{product.sale}</p>
-        {/* //////////ADD TO CART BUTTON//////////////// */}
+        <p id="productData">Retail - {product.retail} - </p>
+        <p id="productData">Sale - ${product.sale}</p>
         <button
+          id="button"
           onClick={() => {
-            deleteProduct(product.productid);
+            submitCart(product);
           }}
         >
-          Delete
-        </button>
-        {/* /////////////////////////////////////// */}
-        <button
-          onClick={() => {
-            deleteProduct(product.productid);
-          }}
-        >
-          Delete
+          Add to Cart
         </button>
       </div>
     </div>
   ));
-  console.log(data);
-  const deleteProduct = (productid) => {
-    Axios.delete(`http://localhost:3001/products/${productid}`).then(
-      (response) => {
-        console.log(response);
-        setProductList(
-          productList.filter((item) => item.productid !== productid)
-        );
-      }
-    );
+
+  console.log("ProductList-KH", productList);
+
+  const submitCart = (product, user) => {
+    Axios.post("http://localhost:4001/cart", {
+      productid: product.productid,
+      item: product.item,
+      sale: product.sale,
+      user: "JACK SMITH",
+      image: image,
+    });
   };
-  
 
-  return <div className="products">{data}</div>;
+  return (
+    <div className="products">
+      <h1 id="productTitle">BROWSE PRODUCTS</h1>
+      <div>{data} </div>
+    </div>
+  );
 }
-
 export default ProductList;

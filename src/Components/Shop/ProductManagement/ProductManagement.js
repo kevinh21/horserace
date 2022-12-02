@@ -51,12 +51,12 @@ function ProductManagement() {
     <div key={index}>
       <div id="card">
         <div id="productList">Item Number: {product.productid} </div>
-        <h3 id="productList">{product.vendor} - </h3>
-        <p id="productList">{product.item} - </p>
-        <p id="productList">{product.description} - </p>
-        <p id="productList">{`COMING SOON`} - </p>
-        <p id="productList">{product.retail} - </p>
-        <p id="productList">{product.sale}</p>
+        <h3 id="productList">Vendor - {product.vendor} </h3>
+        <p id="productList">Item - {product.item} </p>
+        <p id="productList">Desc. - {product.description} - </p>
+        <p id="productList">{`COMING SOON`} </p>
+        <p id="productList">Retail - {product.retail} </p>
+        <p id="productList">Sale - {product.sale}</p>
         <button
           onClick={() => {
             deleteProduct(product.productid);
