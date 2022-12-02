@@ -8,18 +8,20 @@ import "./Selections.css";
 function Selections(props) {
   return (
     <div>
-      <div className="homeGridContainer">
-        <div className="homeGridTopRow">
-          <div className="homeGridTopLeft">
+      <div className="selectionsGridContainer">
+        <div className="selectionsGridTopRow">
+          <div className="selectionsGridTopLeft">
             <TrackSelector />
-            <JockeySelector />
-            <HorseSelector />
           </div>
-          <div className="homeGridBottomLeft">Bottom Left- Quad Three</div>
+          <div className="selectionsGridBottomLeft">
+            Bottom Left- Quad Three <HorseSelector />
+          </div>
         </div>
-        <div className="homeGridBottomRow">
-          <div className="homeGridTopRight">Top Right - Quad One</div>
-          <div className="homeGridBottomRight">Bottom Right - Quad Four</div>
+        <div className="selectionsGridBottomRow">
+          <div className="selectionsGridTopRight">Top Right - Quad One</div>
+          <div className="selectionsGridBottomRight">
+            Bottom Right - Quad Four <JockeySelector />
+          </div>
         </div>
       </div>
     </div>

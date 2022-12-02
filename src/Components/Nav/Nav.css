@@ -1,37 +1,42 @@
+@media (min-width: 600px) {
+}
+
 .navWrapper {
-  top: 0px;
-  position: fixed;
-  width: 100%;
-  box-shadow: 0 12px 12px rgba(0, 0, 0, 0.5);
-  background-color: goldenrod;
-  z-index: +2;
-  height: 60px;
+  padding-bottom: 78px;
 }
 
 #navLogo {
-  right: 100%;
-  margin-top: -20px;
-  margin-right: 10px;
-  /* float: left; */
-  margin-left: -136px;
+  margin-right: 1%;
+  z-index: +2;
 }
 
-nav {
-  font-size: 16px;
-  margin-top: 16px;
-  color: rgb(5, 45, 105);
-}
-#navMenu {
+.navBar {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
+  position: fixed;
+  font-size: 16px;
+  color: rgb(5, 45, 105);
+  background-color: goldenrod;
+  width: 100%;
+  height: 10%;
+  box-shadow: 0 12px 12px rgba(43, 12, 129, 0.5);
+  background-color: goldenrod;
+  z-index: +2;
+}
+.navMenu {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
   list-style: none;
-  margin-left: 280px;
+  margin-left: 6%;
+  padding-top: 1.5%;
+  width: 70%;
 }
 
-#home {
-  margin-left: -72px;
-  /* margin-right: 10px; */
+.navMenu li {
+  background-color: goldenrod;
 }
 
 a {
@@ -46,32 +51,25 @@ a:hover {
   font-weight: 600;
 }
 
-#navMenu li {
-  padding-left: -20px;
-  padding-right: 30px;
-  margin-top: 22px;
-}
-
-#navData {
-  display: inline-block;
+#navScreens {
+  display: block;
   list-style-type: none;
-  /* margin-left: 0px; */
+  background-color: transparent;
   padding-bottom: 8px;
-  background-color: goldenrod;
+  padding-right: 12px;
+  padding-left: 12px;
 }
 
-#navData li {
+#navScreens li {
   display: none;
-  background-color: goldenrodenrod;
+  max-width: 260px;
+}
+#navScreens::before {
+  /* content: ""; */
+  display: block;
 }
 
-#navData::before {
-  content: "Data Sheets";
-  display: inline-block;
-  font-size: 16px;
-}
-
-#navData:hover li {
+#navScreens:hover li {
   display: block;
   z-index: +2;
 }
@@ -79,15 +77,17 @@ a:hover {
 #navHowTo {
   display: inline-block;
   list-style-type: none;
-  margin-left: -28px;
   background-color: goldenrod;
-  padding-bottom: 8px;
   text-align: left;
 }
 
 #navHowTo li {
+  display: block;
+  width: 140px;
+  padding-top: 4%;
   display: none;
   background-color: goldenrod;
+  margin-bottom: 8px;
 }
 #navHowTo::before {
   content: "How to play";
@@ -96,53 +96,116 @@ a:hover {
 
 #navHowTo:hover li {
   display: block;
+  width: 140px;
+  z-index: +2;
+}
+
+#navMakeSelections {
+  display: block;
+  list-style-type: none;
+  background-color: goldenrod;
+}
+
+#navMakeSelections li {
+  display: none;
+  background-color: goldenrod;
+  width: 130px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  z-index: +2;
+  padding-right: 10px;
+}
+
+#navMakeSelections::before {
+  content: "Make Selections";
+  display: block;
+}
+
+#navMakeSelections:hover li {
+  display: block;
+  width: 160px;
+  text-align: left;
+  padding-left: -12px;
+  margin-right: 20px;
+  z-index: +2;
+}
+
+.navData {
+  display: block;
+  list-style-type: none;
+  padding-bottom: 8px;
+  background-color: goldenrod;
+}
+
+.navData li {
+  display: block;
+  width: 140px;
+  padding-top: 4%;
+  display: none;
+  background-color: goldenrod;
+}
+
+.navData::before {
+  content: "Data Sheets";
+  font-size: 16px;
+}
+
+.navData:hover li {
+  display: block;
+  width: 140px;
   z-index: +2;
 }
 
 #navStartRace {
-  display: inline-block;
+  display: block;
   list-style-type: none;
-  /* margin-left: 0px; */
   padding-bottom: 8px;
   background-color: goldenrod;
 }
 
 #navStartRace li {
+  display: block;
+  width: 140px;
+  padding-top: 4%;
   display: none;
-  background-color: goldenrodenrod;
+  background-color: goldenrod;
 }
 
 #navStartRace::before {
   content: "Start Race";
-  display: inline-block;
   font-size: 16px;
 }
 
 #navStartRace:hover li {
   display: block;
+  width: 140px;
   z-index: +2;
 }
 
-#selectionData {
-  display: inline-block;
+#shopping {
+  display: block;
   list-style-type: none;
-  /* margin-left: 0px; */
   padding-bottom: 8px;
   background-color: goldenrod;
 }
 
-#selectionData li {
+#shopping li {
+  display: block;
+  width: 140px;
+  padding-top: 4%;
+  padding-left: 12%;
+  padding-bottom: 8%;
   display: none;
-  background-color: goldenrodenrod;
+  background-color: goldenrod;
 }
 
-#selectionData::before {
-  content: "Race Selections";
-  display: inline-block;
+#shopping::before {
+  content: "Shopping";
   font-size: 16px;
 }
 
-#selectionData:hover li {
+#shopping:hover li {
   display: block;
+  width: 140px;
   z-index: +2;
 }

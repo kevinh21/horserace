@@ -52,6 +52,8 @@ const Trainer = (props) => {
       });
   }
   /////////////////////////////////////////////////////////////////////////////
+  console.log(createTrainer);
+  console.log(deleteTrainer);
 
   const trainerList = trainers.map((myTrainer, index) => (
     <ul key={index}>
@@ -78,7 +80,7 @@ const Trainer = (props) => {
       <div id="trainerListHeader">
         TRAINER DATA
         <br /> #{trainers.length} Listed
-        <br /> Out of 5,544
+        <br />
       </div>
       <div id="trainerListTitles"></div>
       <h id="trainerListId">ID </h>

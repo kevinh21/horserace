@@ -1,30 +1,51 @@
 .homeGridContainer {
   display: grid;
-  margin-top: 100px;
-  margin-left: 140px;
-  grid-template-columns: 50% 50%;
-  width: 88vw;
+  margin-left: 10px;
+  grid-template-columns: 32% 32% 36%;
+  width: 94vw;
   height: 86vh;
 }
 
 .homeGridTopLeft {
-  width: 100%;
+  width: 100;
   height: 50%;
-  border: solid 1px blue;
+  padding-left: 80px;
 }
+
+.homeTutorials {
+  margin-top: 28px;
+  list-style: none;
+  line-height: 22px;
+}
+
 .homeGridTopRight {
   width: 100%;
   height: 50%;
-  border: solid 1px blue;
 }
 .homeGridBottomLeft {
   display: inline-block;
   width: 100%;
   height: 50%;
-  border: solid 1px blue;
 }
 .homeGridBottomRight {
   width: 100%;
   height: 50%;
-  border: solid 1px blue;
+}
+
+.homeTrackList {
+  margin-top: -12px;
+  list-style: none;
+  line-height: 22px;
+}
+
+#homeVideoTop {
+  padding: 10px;
+}
+
+#homeHowToTakeCare {
+  margin-left: 40px;
+}
+#homeTakingCareofHorse {
+  margin-top: 10px;
+  padding-left: 20px;
 }

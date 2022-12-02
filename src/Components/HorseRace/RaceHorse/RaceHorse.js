@@ -1,3 +1,5 @@
+// This component is used to select random horses that will run in the horserace.js component
+
 import "./RaceHorse.css";
 import React, { useState, useEffect } from "react";
 
@@ -34,6 +36,7 @@ const RaceHorse = (props) => {
   ));
   let raceHorses = [selectHorse];
 
+  //Start at a random location for display.
   let offSetNum = raceHorses[
     Math.floor(Math.random() * raceHorses.length)
   ].sort(() => 0.5 - Math.random());

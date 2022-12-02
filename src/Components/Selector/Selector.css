@@ -1,0 +1,69 @@
+.horseSelectorWrapper {
+  display: inline-block;
+  margin-left: 200px;
+  margin-top: 140px;
+}
+.horseSelectorImage {
+  offset-path: path("M0,00, C3900, 00,0,0, 0,0");
+  animation-name: move;
+  animation-timing-function: cubic-bezier(0.415, 1.2176, 0.565, 0.23);
+  animation-direction: forwards;
+  animation-fill-mode: reverse;
+  animation-duration: 7.5s;
+  animation-iteration-count: 1;
+  float: right;
+  margin-top: -10px;
+  margin-right: 70.4%;
+  z-index: +2;
+}
+
+@keyframes move {
+  0% {
+    offset-distance: 0%;
+  }
+  100% {
+    offset-distance: 50%;
+  }
+}
+
+#chooseAHorse {
+  margin-left: 60px;
+  font-size: 20px;
+}
+#chooseAHorse select {
+  margin-left: 20px;
+}
+
+hr {
+  width: 500px;
+}
+
+#horseAddButton {
+  display: inline-block;
+  margin-top: 0px;
+  margin-left: 210px;
+  margin-bottom: 20px;
+}
+#horseDeleteButton {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+body {
+  height: 1000px;
+  background-color: green;
+}
+
+.dropDownlist {
+  margin-left: 200px;
+  margin-top: 200px;
+}
+
+.userInputForm {
+  margin-top: 180px;
+  margin-left: 200px;
+}
+
+.counter {
+  display: block;
+}

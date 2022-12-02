@@ -5,6 +5,7 @@ const TrackSelector = (props) => {
   const [tracks, setTracks] = useState([]);
   const [tracksName, setTracksName] = useState([]);
   const [tracksInfo, setTracksInfo] = useState(tracks);
+  console.log(tracksInfo);
 
   useEffect(() => {
     getTrack();

@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 
 function Management() {
   useEffect(() => {
-    window.location.href = "http://localhost/menu.php";
+    window.location.href = "http://bidsite.net/horserace/";
   }, []);
 
   return (

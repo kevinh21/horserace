@@ -1,9 +1,9 @@
 .App {
   /* background-color: green; */
-  height: 1000px;
+  /* max-height: 99%; */
   /* z-index: -3; */
 }
 
 body {
-  background-color: green;
+  background-color: rgb(203, 229, 203);
 }

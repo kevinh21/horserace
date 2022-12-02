@@ -26,9 +26,9 @@ const RaceJockey = (props) => {
     <>
       {selectJockey.jockeyid + " . . ."}
       {selectJockey.jockeyName + " . . ."}
-      {selectJockey.sts + " . . ."}
+      {selectJockey.jockeyStarts + " . . ."}
       {selectJockey.jockeyRank + " . . ."}
-      {selectJockey.jockeyWinnings + " . . ."}
+      {selectJockey.totalPurse + " . . ."}
       {selectJockey.winPercent + "%"}
     </>
   ));
@@ -54,11 +54,11 @@ const RaceJockey = (props) => {
       <div className="jockeySelectorWrapper">
         <br />
         <div />
-        <div id="alsoRan">
-          Jockeys ALSO Running In This Race
+        <div id="jockeyRode">
+          Jockeys In This Race
           <div />
           <br />
-          <div id="alsoTitles">
+          <div id="jockeyTitles">
             ID # --- Jockey Name ---- Starts ----- Rank ---- Winning$ ---- Win %
           </div>
         </div>
@@ -72,7 +72,7 @@ const RaceJockey = (props) => {
             </li>
           ))}
         </ul>
-        <p id="raceJockeynumberOfJockeys">
+        <p id="raceJockeyNumberOfJockeys">
           User Selects (need input field) Number of Jockeys in the Race:{" "}
           {userNum}
         </p>

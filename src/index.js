@@ -1,5 +1,6 @@
+// remember to: npm install react-router-dom
+
 import React from "react";
-//npm install react-routeer-dom
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ReactDOM from "react-dom/client";
 import "./index.css";
@@ -9,10 +10,6 @@ import Home from "./Components/Home/Home";
 import LandingPage from "./Components/LandingPage/LandingPage";
 import Management from "./Components/Management/Management";
 import Selections from "./Components/Selector/Selections";
-// import HorseSelector from "./Components/Selector/HorseSelector/HorseSelector";
-// import JockeySelector from "./Components/Selector/JockeySelector/JockeySelector";
-// import TrackSelector from "./Components/Selector/TrackSelector/TrackSelector";
-import Generator from "./Components/Selector/RaceSelector/Generator";
 import HorseRace from "./Components/HorseRace/HorseRace";
 import HowToPlay from "./Components/HowTo/HowToPlay";
 import HowToBet from "./Components/HowTo/HowToBet";
@@ -26,23 +23,25 @@ import RaceHorse from "./Components/HorseRace/RaceHorse/RaceHorse";
 import Term from "./Components/Data/Term/Term";
 import Bets from "./Components/Bets/Bets";
 import RaceSchedule from "./Components/RaceSchedule/RaceSchedule";
-// import RaceScheduleOne from "./Components/RaceSchedule/RaceScheduleOne";
-// import RaceScheduleTwo from "./Components/RaceSchedule/RaceScheduleTwo";
-// import RaceScheduleThree from "./Components/RaceSchedule/RaceScheduleThree";
+import RaceScreens from "./Components/RaceScreens/RaceScreens";
+import ProductManagement from "./Components/Shop/ProductManagement/ProductManagement";
+import ProductBrowse from "./Components/Shop/ProductBrowse/ProductBrowse";
+import Cart from "./Components/Shop/cart/Cart";
+import Wish from "./Components/Shop/WishList/WishList";
+import Checkout from "./Components/Shop/cart/Checkout";
+import Returns from "./Components/Shop/Returns/Returns";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <Router basename={process.env.PUBLIC_URL}>
     <Routes>
       <Route exact path={"/"} element={<App />}>
-        <Route index="/home/" element={<Home />} />
-        <Route path="/home/" element={<Home />} />
         <Route path="/landingPage/" element={<LandingPage />} />
+        <Route index="/landingPage/" element={<LandingPage />} />
+        <Route path="/home/" element={<Home />} />
+        <Route path="/landingPage" element={<LandingPage />} />
         <Route path="/landingPage/management" element={<Management />} />
         <Route path="/selections" element={<Selections />} />
-        {/* <Route path="/horseSelector" element={<HorseSelector />} />
-        <Route path="/jockeySelector" element={<JockeySelector />} />
-        <Route path="/trackSelector" element={<TrackSelector />} /> */}
         <Route path="/horseRace" element={<HorseRace />} />
         <Route path="/howToPlay" element={<HowToPlay />} />
         <Route path="/howToBet" element={<HowToBet />} />
@@ -55,13 +54,15 @@ root.render(
         <Route path="/pastRaces" element={<PastRaces />} />
         <Route path="/bets" element={<Bets />} />
         <Route path="/management" element={<Management />} />
-        <Route path="/generator" element={<Generator />} />
         <Route path="/raceHorse" element={<RaceHorse />} />
-        <Route path="raceSchedule" element={<RaceSchedule />}>
-          {/* <Route path="raceScheduleOne" element={<RaceScheduleOne />} />
-          <Route path="raceScheduleTwo" element={<RaceScheduleTwo />} />
-          <Route path="raceScheduleThree" element={<RaceScheduleThree />} /> */}
-        </Route>
+        <Route path="raceSchedule" element={<RaceSchedule />} />
+        <Route path="/raceScreens" element={<RaceScreens />} />
+        <Route path="/productManagement" element={<ProductManagement />} />
+        <Route path="/productBrowse" element={<ProductBrowse />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/wish" element={<Wish />} />
+        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/returns" element={<Returns />} />
       </Route>
     </Routes>
   </Router>

@@ -19,6 +19,8 @@ const Jockey = (props) => {
         setJockeys(parseData);
       });
   };
+
+  //    TO DO ITEMS
   // function createJockey() {
   //   let jockeyName = prompt("Enter jockey name");
   //   let totalPurse = prompt("Enter totalPurse");
@@ -54,25 +56,25 @@ const Jockey = (props) => {
 
   const jockeyData = jockeys.map((myJockey, index) => (
     <ul key={index}>
-      <li id="jockeyDataWrapper">
-        <hr />
-        <h id="jockeyDataId"> {myJockey.jockeyid}</h>
-        <h id="jockeyDataName"> {myJockey.jockeyName}</h>
-        <h id="jockeyDataRank"> {myJockey.jockeyRank}</h>
-        <h id="jockeyDataWeight"> {myJockey.weight}</h>
-        <h id="jockeyDataHeight"> {myJockey.height}</h>
-        <h id="jockeyDataStarts"> {myJockey.starts}</h>
-        <h id="jockeyDataFirst"> {myJockey.jockeyFirst}</h>
-        <h id="jockeyDataSecond"> {myJockey.jockeySecond}</h>
-        <h id="jockeyDataThird"> {myJockey.jockeyThird}</h>
-        <h id="jockeyDataTotalPurse"> {myJockey.totalPurse}</h>
-        <h id="jockeyDataPerStartPUrse"> {myJockey.perStartPurse}</h>
-        <h id="jockeyDataWinPercent"> {myJockey.jockeyWinPercent + "%"}</h>
-        <h id="jockeyDataTopThree"> {myJockey.topThree}</h>
-        <h id="jockeyDataTopThreePercent"> {myJockey.topThreePercent + "%"}</h>
-        <h id="jockeyDataYears"> {myJockey.years + " "}</h>
-      </li>
-      {console.log(myJockey)}
+      <ul className="jockeyDataWrapper">
+        {/* <hr /> */}
+        <li id="jockeyDataId"> {myJockey.jockeyid}</li>
+        <li id="jockeyDataName"> {myJockey.jockeyName}</li>
+        <li id="jockeyDataRank"> {myJockey.jockeyRank}</li>
+        <li id="jockeyDataWeight"> {myJockey.weight}</li>
+        <li id="jockeyDataHeight"> {myJockey.height}</li>
+        <li id="jockeyDataStarts"> {myJockey.starts}</li>
+        <li id="jockeyDataFirst"> {myJockey.jockeyFirst}</li>
+        <li id="jockeyDataSecond"> {myJockey.jockeySecond}</li>
+        <li id="jockeyDataThird"> {myJockey.jockeyThird}</li>
+        <li id="jockeyDataTotalPurse"> {myJockey.totalPurse}</li>
+        <li id="jockeyDataPerStartPUrse"> {myJockey.perStartPurse}</li>
+        <li id="jockeyDataWinPercent">{myJockey.jockeyWinPercent + "%"}</li>
+        <li id="jockeyDataTopThree"> {myJockey.topThree}</li>
+        <li id="jockeyDataTopThreePercent">{myJockey.topThreePercent + "%"}</li>
+        <li id="jockeyDataYears"> {myJockey.years + " "}</li>
+      </ul>
+      {/* {console.log(myJockey)} */}
     </ul>
   ));
   // console.log(myJockey);
@@ -81,25 +83,37 @@ const Jockey = (props) => {
       <div id="jockeyListHeader">
         JOCKEY DATA
         <br /> #{jockeys.length} Listed
-        <br /> Out of 5,548
+        <br />
       </div>
-      <div id="jockeyHeaderTitles"></div>
-      <h id="jockeyListId"> ID</h>
-      <h id="jockeyListName"> Name</h>
-      <h id="jockeyListRank"> Rank</h>
-      <h id="jockeyListWeight"> Weight</h>
-      <h id="jockeyListHeight"> Height</h>
-      <h id="jockeyListStarts"> Starts</h>
-      <h id="jockeyListFirst"> 1st</h>
-      <h id="jockeyListSecond"> 2nd</h>
-      <h id="jockeyListThird"> 3rd</h>
-      <h id="jockeyListTotalPurse"> Total Purse</h>
-      <h id="jockeyListPerStartPUrse">Per Start Purse</h>
-      <h id="jockeyListWinPercent"> Win%</h>
-      <h id="jockeyListTopThree"> Top 3</h>
-      <h id="jockeyListTopThreePercent"> Top 3%</h>
-      <h id="jockeyListYears"> Years</h>
-      <div id="jockeyDataList"> {jockeyData}</div>
+      <div id="jockeyHeaderTitles">
+        <ul className="jockeyColumnTitles">
+          <li> ID</li>
+          <li> Name</li>
+          <li> Rank</li>
+          <li> Wt.</li>
+          <li> Ht.</li>
+          <li> Starts</li>
+          <li> 1st</li>
+          <li> 2nd</li>
+          <li> 3rd</li>
+          <li> Total $$</li>
+          <li> Start $$</li>
+          <li> Win%</li>
+          <li> Top 3</li>
+          <li> Top 3%</li>
+          <li> Years</li>
+        </ul>
+      </div>
+      <div id="jockeyDataList">
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        {jockeyData}
+      </div>
     </div>
   );
 };

@@ -75,7 +75,7 @@ const PastRaces = (props) => {
       <div id="pastRacesDataHeader">
         PAST RACES
         <br /> #{pastRaces.length} Listed
-        <br /> Out of 8,792
+        <br />
       </div>
       <div id="pastRacesHeaderTitles"></div>
       <h id="pastRacesListId">ID </h>

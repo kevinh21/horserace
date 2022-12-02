@@ -5,29 +5,23 @@ import "./Nav.css";
 const Nav = () => {
   return (
     <div className="navWrapper">
-      <div id="navLogo">
-        <img
-          className="landingHero"
-          alt="Horse Racers"
-          src={process.env.PUBLIC_URL + "/images/navLogo.png"}
-        ></img>
-      </div>
-      <nav>
-        <ul id="navMenu">
-          <li id="home">
+      <nav className="navBar">
+        <div id="navLogo">
+          <img
+            className="navLogo"
+            alt="Horse Racers"
+            src={process.env.PUBLIC_URL + "/images/navLogo.png"}
+          ></img>
+        </div>
+        <ul className="navMenu">
+          <li id="navHome">
             <NavLink to="/home"> Home </NavLink>
           </li>
-          <li>
-            <NavLink to="/term"> Terminology </NavLink>
+          <li id="navScreens">
+            <NavLink to="/raceScreens"> Screens </NavLink>
           </li>
           <li>
-            <NavLink to="/selections">Race Selections</NavLink>
-          </li>
-          <li>
-            <NavLink to="/bets"> Place Your Bets</NavLink>
-          </li>
-          <li>
-            <NavLink to="/management">Administration</NavLink>
+            <NavLink to="/management">Management</NavLink>
           </li>
           <li>
             <ul id="navHowTo">
@@ -35,15 +29,32 @@ const Nav = () => {
                 <NavLink to="/howToPlay"> Playing </NavLink>
               </li>
               <li>
+                <NavLink to="/term"> Terminology </NavLink>
+              </li>
+              <li>
                 <NavLink to="/howToSelect"> Selections </NavLink>
               </li>
               <li>
-                <NavLink to="/howToBet"> Betting</NavLink>
+                <NavLink to="/howToBet"> Betting Guide</NavLink>
+              </li>
+              <li>
+                <NavLink to="/bets"> Ways to Bet</NavLink>
               </li>
             </ul>
           </li>
           <li>
-            <ul id="navData">
+            <ul id="navMakeSelections">
+              <li>
+                <NavLink to="/selections">Horses/Jockeys/etc.</NavLink>
+              </li>
+              <li>
+                <NavLink to="/raceSchedule">Schedules</NavLink>
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <ul className="navData">
               <li>
                 <NavLink to="/horse"> Horse DATA </NavLink>
               </li>
@@ -80,6 +91,26 @@ const Nav = () => {
               </li>
             </ul>
           </li>
+          <ul id="shopping">
+            <li>
+              <NavLink to="/productBrowse">Browse products </NavLink>
+            </li>
+            <li>
+              <NavLink to="/productManagement">Manage Products </NavLink>
+            </li>
+            <li>
+              <NavLink to="/cart">Cart</NavLink>
+            </li>
+            <li>
+              <NavLink to="/wish">Wish List</NavLink>
+            </li>
+            <li>
+              <NavLink to="/checkout">Checkout</NavLink>
+            </li>
+            <li>
+              <NavLink to="/returns">Returns</NavLink>
+            </li>
+          </ul>
         </ul>
       </nav>
     </div>

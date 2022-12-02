@@ -45,7 +45,6 @@ const HorseSelector = (props) => {
           {selectHorse.map((nameValue) => (
             <option>{nameValue}</option>
           ))}
-          {/* {console.log(horsesName)} */}
         </select>
         <br />
         <div> ID # - Horse Name - Starts - Rank - Winning$ - Win %</div>

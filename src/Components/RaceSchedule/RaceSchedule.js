@@ -1,4 +1,4 @@
-import { NavLink, Outlet } from "react-router-dom";
+// import { NavLink, Outlet } from "react-router-dom";
 import "./RaceSchedule.css";
 
 function RaceSchedule() {
@@ -11,41 +11,59 @@ function RaceSchedule() {
             <div className="raceScheduleGridTopLeft">
               <ul>
                 <div id="raceScheduleTitle">
-                  Time - Track Details - Jockey - Horse
+                  <h1>LOCATION</h1> - DROP DOWN LIST OF STATES
+                  <h1>Track</h1> - DROP DOWN LIST TO SELECT RaceTrack
+                  <br />
+                  <br />
                   <div id="raceScheduleDetails">
-                    <h1>Details </h1>8 Runners | 6.5f | Starter Optional
-                    Claiming | Dirt
+                    <div>Belmont Derby </div>
+                    <br />
+                    Track information goes here ...
                   </div>
                 </div>
-                <li id="raceSheduleOne">
-                  <NavLink to="/raceSchedule/raceScheduleOne">
-                    Race #1 3:00 PM
-                  </NavLink>
-                </li>
-                <li id="raceSheduleTwoo">
-                  <NavLink to="/raceSchedule/raceScheduleTwo">
-                    Race #2 5:00 PM
-                  </NavLink>
-                </li>
-                <li id="raceSheduleThree">
-                  <NavLink to="/raceSchedule/raceScheduleThree">
-                    Race #3 7:00 PM <br />
-                  </NavLink>
-                </li>
               </ul>
               <div id="raceSheduleSelectBy">
-                Select by Country <br /> Select by Jockey <br /> Select by Track{" "}
-                <br /> Select by Wagger <br /> Select by Popularity
+                {/* Select by Country <br /> Select by Jockey <br /> Select by Track
+                <br /> Select by Wagger <br /> Select by Popularity */}
               </div>
             </div>
             <div className="raceScheduleGridBottomLeft">
-              Bottom Left- Quad Three
+              Horses Running - Based on Selection of Race/Time - determined byt
+              Track
+              <br />
+              <h3>
+                Race #1 - Belmont Derby - | 6.5f | Starter Optional Claiming |
+                Dirt Track
+              </h3>
+              <br /> 1 Ravi's SongUnbridled's Song <br />2 Engelbert TadJacobse
+              Stella
+              <br />3 Denver Hogan Reid Amir <br />4 La Macchina Malibu Moon
+              <br />5 Peyote Patty Cactus Ridge <br />6 Pilgrim Trust Candy Ride
+              <br />7 Callen Robinson Thelma Etha <br />8 MoTown Uncle
             </div>
           </div>
           <div className="raceScheduleGridBottomRow">
-            <div className="raceScheduleGridTopRight">Top Right - Quad One</div>
+            <div className="raceScheduleGridTopRight">
+              Start Time - Deived List of Races/Times based on Track Selected
+              <br />
+              RACE #1 --- 9:00am --- 8 Horses
+              <br />
+              RACE #2 --- 9:00am --- 11 Horses
+              <br />
+              RACE #3 --- 9:00am --- 6 Horses
+              <br />
+              RACE #4 --- 9:00am --- 12 Horses
+              <br />
+              RACE #5 --- 9:00am --- 9 Horses
+              <br />
+              RACE #6 --- 9:00am --- 8 Horses
+              <br />
+              RACE #7 --- 9:00am --- 7 Horses
+              <br />
+              RACE #8 --- 9:00am --- 10 Horses
+            </div>
             <div className="raceScheduleGridBottomRight">
-              Bottom Right - Quad Four
+              Clicking on horse in the list will show it's stats/picture
             </div>
           </div>
         </div>

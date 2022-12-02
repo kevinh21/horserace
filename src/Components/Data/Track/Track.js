@@ -72,7 +72,7 @@ const Track = (props) => {
         {" "}
         TRACK DATA
         <br /> #{tracks.length} Listed
-        <br /> Out of 22,634
+        <br />
       </div>
       <div id="trackListTitles"> </div>
       <h id="trackListID">ID </h>

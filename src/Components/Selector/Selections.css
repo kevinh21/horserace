@@ -1,4 +1,4 @@
-.homeGridContainer {
+.selectionsGridContainer {
   display: grid;
   margin-top: 100px;
   margin-left: 140px;
@@ -8,23 +8,23 @@
   height: 86vh;
 }
 
-.homeGridTopLeft {
+.selectionsGridTopLeft {
   width: 100%;
   height: 50%;
   border: solid 1px blue;
 }
-.homeGridTopRight {
+.selectionsGridTopRight {
   width: 100%;
   height: 50%;
   border: solid 1px blue;
 }
-.homeGridBottomLeft {
+.selectionsGridBottomLeft {
   display: inline-block;
   width: 100%;
   height: 50%;
   border: solid 1px blue;
 }
-.homeGridBottomRight {
+.selectionsGridBottomRight {
   width: 100%;
   height: 50%;
   border: solid 1px blue;
