@@ -236,21 +236,17 @@ new Promise(function (resolve, reject) {
       }
     );
     const instance = req.body.cartid;
-    const productid = req.body.productid;
-    const item = req.body.item;
-    const sale = req.body.sale;
-    const user = req.body.user;
+    // const productid = req.body.productid;
+    // const item = req.body.item;
+    // const sale = req.body.sale;
+    // const user = req.body.user;
     const count = req.body.count;
-    const cartUpdate = `UPDATE cart SET productid = ?, item = ?, sale = ?, user = ?, count = ? WHERE cartid = ?`;
-    db.run(
-      cartUpdate,
-      [productid, item, sale, user, count, instance],
-      (err) => {
-        if (err) {
-          return console.log(err.message);
-        }
+    const cartUpdate = `UPDATE cart SET count = ? WHERE cartid = ?`;
+    db.run(cartUpdate, [count, instance], (err) => {
+      if (err) {
+        return console.log(err.message);
       }
-    );
+    });
     console.log(`A record has been updated ${req.body.cartid}`);
     db.close((err) => {
       if (err) {

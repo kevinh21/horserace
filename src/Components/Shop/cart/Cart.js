@@ -10,7 +10,7 @@ function Cart() {
   // const [image, setImage] = useState("");
   const [sale, setSale] = useState("");
   const [user, setUser] = useState("");
-  const [count, setCount] = useState("");
+  const [count, setCount] = useState("1");
   const [cartList, setCartList] = useState([]);
   // const [updateRecord, setUpdateRecord] = useState("");
 
@@ -20,15 +20,15 @@ function Cart() {
     });
   }, []);
 
-  const wishList = (cart) => {
+  const wishList = () => {
     Axios.post("http://localhost:5001/wish", {
-      cartid: cart.cartid,
-      productid: cart.productid,
-      item: cart.item,
-      user: cart.user,
+      cartid: cartid,
+      // productid: productid,
+      item: item,
+      // user: user,
       // image: image,
-      count: cart.count,
-      sale: cart.sale,
+      count: count,
+      sale: sale,
     });
 
     setCartList([
@@ -50,12 +50,12 @@ function Cart() {
     <div key={index}>
       <div id="card">
         <div id="cartList">Item Number: {cart.cartid} </div>
-        <h3 id="cartList">{cart.productid} - </h3>
-        <p id="cartList">{cart.item} - </p>
+        <h3 id="cartList">{cart.productid} </h3>
+        <p id="cartList">{cart.item} </p>
         <p id="cartList">{cart.sale}</p>
-        <p id="cartList">{`COMING SOON`} - </p>
-        <p id="cartList">{cart.user} - </p>
-        <p id="cartList">{cart.count} - </p>
+        <p id="cartList">{`COMING SOON`}</p>
+        <p id="cartList">{cart.user} </p>
+        <p id="cartList">{cart.count} </p>
         <button
           onClick={() => {
             deleteCart(cart.cartid);
@@ -72,27 +72,32 @@ function Cart() {
         />
         <button
           onClick={() => {
-            console.log("Kevin-UPDATECOUNT", cart.cartid, count);
-            updateCart(cartid, count);
+            // console.log("Kevin-UPDATECOUNT", cart.cartid, item, sale, user, count);
+            updateCart(cart.cartid, productid, item, sale, user, count);
           }}
         >
           Enter Qty.
         </button>
+        {/* ////////////// */}
         <button
           onClick={() => {
             wishList(cart);
           }}
         >
-          Wish List (+)
+          Save Wishlist (+)
         </button>
       </div>
     </div>
   ));
   // console.log("Kev-maplist", count);
 
-  const updateCart = (cartid, count) => {
+  const updateCart = (cartid, productid, item, sale, user, count) => {
     Axios.put("http://localhost:4001/cart", {
       cartid: cartid,
+      productid: productid,
+      item: item,
+      sale: sale,
+      user: user,
       count: count,
     });
     setCount("");
