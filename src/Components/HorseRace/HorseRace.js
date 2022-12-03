@@ -14,7 +14,7 @@ function HorseRace() {
       <div className="horseRaceGridRight">
         <video id="video" autoPlay muted>
           <source
-            src={process.env.PUBLIC_URL + "/media/raceVideo.mp4"}
+            src={process.env.PUBLIC_URL + "/media/horserace.mp4"}
             type="video/mp4"
           />
         </video>

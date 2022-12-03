@@ -7,7 +7,7 @@ function Cart() {
   const [cartid, setCartid] = useState("");
   const [productid, setProductid] = useState("");
   const [item, setItem] = useState("");
-  // const [image, setImage] = useState("");
+  const [image, setImage] = useState("");
   const [sale, setSale] = useState("");
   const [user, setUser] = useState("");
   const [count, setCount] = useState("1");
@@ -20,15 +20,15 @@ function Cart() {
     });
   }, []);
 
-  const wishList = () => {
+  const sendToWishList = (wish) => {
     Axios.post("http://localhost:5001/wish", {
       cartid: cartid,
-      // productid: productid,
-      item: item,
-      // user: user,
-      // image: image,
-      count: count,
-      sale: sale,
+      productid: wish.productid,
+      item: wish.item,
+      sale: wish.sale,
+      user: wish.user,
+      // count: count,
+      image: wish.image,
     });
 
     setCartList([
@@ -37,25 +37,26 @@ function Cart() {
         cartid: cartid,
         productid: productid,
         item: item,
-        user: user,
-        // image: image,
-        count: count,
         sale: sale,
+        user: user,
+        image: image,
+        count: count,
       },
     ]);
   };
-  console.log("COUNT-1-KH", count);
+
+  // console.log("COUNT-1-KH", count);
 
   const mapList = cartList.map((cart, index) => (
     <div key={index}>
       <div id="card">
         <div id="cartList">Item Number: {cart.cartid} </div>
-        <h3 id="cartList">{cart.productid} </h3>
-        <p id="cartList">{cart.item} </p>
-        <p id="cartList">{cart.sale}</p>
-        <p id="cartList">{`COMING SOON`}</p>
-        <p id="cartList">{cart.user} </p>
-        <p id="cartList">{cart.count} </p>
+        <h3 id="cartList">SKU # {cart.productid} </h3>
+        <p id="cartList">Item - {cart.item} </p>
+        <p id="cartList">Sale ${cart.sale}</p>
+        <p id="cartList">User {cart.user} </p>
+        <p id="cartList">Qty - {cart.count} </p>
+        <p id="cartList">Picture - {`COMING SOON`}</p>
         <button
           onClick={() => {
             deleteCart(cart.cartid);
@@ -73,7 +74,7 @@ function Cart() {
         <button
           onClick={() => {
             // console.log("Kevin-UPDATECOUNT", cart.cartid, item, sale, user, count);
-            updateCart(cart.cartid, productid, item, sale, user, count);
+            changeCartQty(cart.cartid, productid, item, sale, user, count);
           }}
         >
           Enter Qty.
@@ -81,7 +82,8 @@ function Cart() {
         {/* ////////////// */}
         <button
           onClick={() => {
-            wishList(cart);
+            sendToWishList(cart);
+            deleteCart(cart.cartid);
           }}
         >
           Save Wishlist (+)
@@ -89,9 +91,8 @@ function Cart() {
       </div>
     </div>
   ));
-  // console.log("Kev-maplist", count);
 
-  const updateCart = (cartid, productid, item, sale, user, count) => {
+  const changeCartQty = (cartid, productid, item, sale, user, count) => {
     Axios.put("http://localhost:4001/cart", {
       cartid: cartid,
       productid: productid,
@@ -101,7 +102,7 @@ function Cart() {
       count: count,
     });
     setCount("");
-    console.log("AFTER SET cleared", cartid, count);
+    console.log("AFTER SET Count", cartid, count);
   };
 
   const deleteCart = (cartid) => {

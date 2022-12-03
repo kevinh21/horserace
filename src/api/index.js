@@ -288,7 +288,7 @@ new Promise(function (resolve, reject) {
       });
   });
 
-  //"create(WISH INSERT)" function for "Products"
+  //"create New (WISH INSERT)" function for "Products"
   wish.post("/wish", (req, res) => {
     let db = new sqlite3.Database(
       "../Components/db/horserace.sqlite3",
@@ -301,15 +301,18 @@ new Promise(function (resolve, reject) {
     );
     const productid = req.body.productid;
     const item = req.body.item;
-    const user = req.body.user;
     const sale = req.body.sale;
+    const user = req.body.user;
+    // const image = req.body.image;
 
     db.serialize(() => {
-      db.run(wishInsert, [productid, item, user, sale], (err) => {
+      db.run(wishInsert, [productid, item, sale, user], (err) => {
         if (err) {
           return console.log(err.message);
         }
       });
+      console.log("product-ID", productid);
+
       console.log(`A row has been inserted with row id ${this.lastID}`);
       db.close((err) => {
         if (err) {

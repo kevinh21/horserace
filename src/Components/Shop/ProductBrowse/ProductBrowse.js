@@ -37,7 +37,7 @@ function ProductList() {
         <button
           id="button"
           onClick={() => {
-            submitCart(product);
+            sendToCart(product);
           }}
         >
           Add to Cart
@@ -47,8 +47,8 @@ function ProductList() {
   ));
 
   console.log("ProductList-KH", productList);
-
-  const submitCart = (product, user) => {
+//NEED TO ADD useEfect and retrieve user table
+  const sendToCart = (product, user) => {
     Axios.post("http://localhost:4001/cart", {
       productid: product.productid,
       item: product.item,
