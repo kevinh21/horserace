@@ -10,7 +10,7 @@ const Nav = () => {
           <img
             className="navLogo"
             alt="Horse Racers"
-            src={process.env.PUBLIC_URL + "/images/navLogo.png"}
+            src={process.env.PUBLIC_URL + "/images/horse-logo.png"}
           ></img>
         </div>
         <ul className="navMenu">

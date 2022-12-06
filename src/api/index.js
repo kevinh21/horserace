@@ -12,9 +12,9 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 const port = 3001;
 const sqlite3 = require("sqlite3").verbose();
-const productInsert = `INSERT INTO products(vendor, item, description, retail, sale) VALUES(?,?,?,?,?)`;
-const cartInsert = `INSERT INTO cart(productid, item, sale, user, count) VALUES(?,?,?,?,?)`;
-const wishInsert = `INSERT INTO wish(productid, item, sale, user) VALUES(?,?,?,?)`;
+const productInsert = `INSERT INTO products(name, item, description, retail, price) VALUES(?,?,?,?,?)`;
+const cartInsert = `INSERT INTO cart(productid, item, price, user, count) VALUES(?,?,?,?,?)`;
+const wishInsert = `INSERT INTO wish(productid, item, price, user) VALUES(?,?,?,?)`;
 
 new Promise(function (resolve, reject) {
   /////////////////Products & Horse ACCESS////////////////////////////////
@@ -94,15 +94,15 @@ new Promise(function (resolve, reject) {
         }
       }
     );
-    const vendor = req.body.vendor;
+    const name = req.body.name;
     const item = req.body.item;
     const description = req.body.description;
     const retail = req.body.retail;
-    const sale = req.body.sale;
+    const price = req.body.price;
     db.serialize(() => {
       db.run(
         productInsert,
-        [vendor, item, description, retail, sale],
+        [name, item, description, retail, price],
         (err) => {
           if (err) {
             return console.log(err.message);
@@ -132,15 +132,15 @@ new Promise(function (resolve, reject) {
       }
     );
     const instance = req.body.productid;
-    const vendor = req.body.vendor;
+    const name = req.body.name;
     const item = req.body.item;
     const description = req.body.description;
     const retail = req.body.retail;
-    const sale = req.body.sale;
-    const dbUpdate = `UPDATE products SET vendor = ?, item = ?, description = ?, retail = ?, sale = ? WHERE productid = ?`;
+    const price = req.body.price;
+    const dbUpdate = `UPDATE products SET name = ?, item = ?, description = ?, retail = ?, price = ? WHERE productid = ?`;
     db.run(
       dbUpdate,
-      [vendor, item, description, retail, sale, instance],
+      [name, item, description, retail, price, instance],
       (err) => {
         if (err) {
           return console.log(err.message);
@@ -204,12 +204,12 @@ new Promise(function (resolve, reject) {
     );
     const productid = req.body.productid;
     const item = req.body.item;
-    const sale = req.body.sale;
+    const price = req.body.price;
     const user = req.body.user;
     const count = req.body.count;
 
     db.serialize(() => {
-      db.run(cartInsert, [productid, item, sale, user, count], (err) => {
+      db.run(cartInsert, [productid, item, price, user, count], (err) => {
         if (err) {
           return console.log(err.message);
         }
@@ -238,7 +238,7 @@ new Promise(function (resolve, reject) {
     const instance = req.body.cartid;
     // const productid = req.body.productid;
     // const item = req.body.item;
-    // const sale = req.body.sale;
+    // const price = req.body.price;
     // const user = req.body.user;
     const count = req.body.count;
     const cartUpdate = `UPDATE cart SET count = ? WHERE cartid = ?`;
@@ -301,12 +301,12 @@ new Promise(function (resolve, reject) {
     );
     const productid = req.body.productid;
     const item = req.body.item;
-    const sale = req.body.sale;
+    const price = req.body.price;
     const user = req.body.user;
     // const image = req.body.image;
 
     db.serialize(() => {
-      db.run(wishInsert, [productid, item, sale, user], (err) => {
+      db.run(wishInsert, [productid, item, price, user], (err) => {
         if (err) {
           return console.log(err.message);
         }
@@ -338,9 +338,9 @@ new Promise(function (resolve, reject) {
     const productid = req.body.productid;
     const item = req.body.item;
     const user = req.body.user;
-    const sale = req.body.sale;
-    const wishUpdate = `UPDATE wish SET productid = ?, item = ?, user = ?, sale = ? WHERE wishid = ?`;
-    db.run(wishUpdate, [productid, item, user, sale, instance], (err) => {
+    const price = req.body.price;
+    const wishUpdate = `UPDATE wish SET productid = ?, item = ?, user = ?, price = ? WHERE wishid = ?`;
+    db.run(wishUpdate, [productid, item, user, price, instance], (err) => {
       if (err) {
         return console.log(err.message);
       }
@@ -375,6 +375,9 @@ new Promise(function (resolve, reject) {
 ///////////////////BEGIN PORT MAPPING/////////////////////////////////////
 cart.listen(4001);
 wish.listen(5001);
+cart.listen(4002);
+wish.listen(5002);
+
 // horse.listen();
 app.listen(port, () => {
   console.log(`App running on port ${port}.`);

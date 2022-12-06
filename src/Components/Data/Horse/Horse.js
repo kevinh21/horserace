@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Children } from "react";
 import "./Horse.css";
 
 const Horse = (props) => {
@@ -22,6 +22,9 @@ const Horse = (props) => {
       });
   };
 
+
+
+
   const horseList = horses.map((myHorse, index) => (
     <ul key={index}>
       <li id="myhorseListDataWrapper">
@@ -39,7 +42,7 @@ const Horse = (props) => {
       </li>
     </ul>
   ));
-  console.log(horseList.horseid);
+
   return (
     <div>
       <div id="horseDataHeader">

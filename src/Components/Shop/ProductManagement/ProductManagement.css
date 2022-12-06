@@ -96,7 +96,7 @@
   padding-left: 46px;
   width: 90px;
 }
-#productVendorHeader {
+#productNameHeader {
   display: inline-block;
   padding-left: 32px;
   width: 248px;
@@ -116,7 +116,7 @@
   width: 102px;
   text-align: left;
 }
-#productSaleHeader {
+#productPriceHeader {
   display: inline-block;
   padding-left: 54px;
   text-align: left;
@@ -134,7 +134,7 @@
   padding-left: 8px;
 }
 
-#productDataVendor {
+#productDataName {
   display: inline-block;
   width: 280px;
   white-space: nowrap;
@@ -163,7 +163,7 @@
   text-overflow: ellipsis;
 }
 
-#productDatasale {
+#productDataprice {
   display: inline-block;
   padding-left: 68px;
   text-align: right;

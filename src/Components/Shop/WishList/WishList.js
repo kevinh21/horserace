@@ -8,10 +8,9 @@ function Wish() {
   const [productid, setProductid] = useState("");
   const [item, setItem] = useState("");
   const [image, setImage] = useState("");
-  const [sale, setSale] = useState("");
+  const [price, setPrice] = useState("");
   const [user, setUser] = useState("");
   const [wishList, setWishList] = useState([]);
-  // const [updateRecord, setUpdateRecord] = useState("");
 
   useEffect(() => {
     Axios.get("http://localhost:5001/wish").then((response) => {
@@ -24,7 +23,7 @@ function Wish() {
       wishid: wishid,
       productid: cart.productid,
       item: cart.item,
-      sale: cart.sale,
+      price: cart.price,
       user: cart.user,
       image: cart.image,
     });
@@ -35,7 +34,7 @@ function Wish() {
         wishid: wishid,
         productid: productid,
         item: item,
-        sale: sale,
+        price: price,
         user: user,
         image: image,
       },
@@ -48,7 +47,7 @@ function Wish() {
         <div id="wishList">Item Number: {wish.wishid} </div>
         <h3 id="wishList">SKU # {wish.productid} </h3>
         <p id="wishList">Item - {wish.item} </p>
-        <p id="wishList">Sale ${wish.sale}</p>
+        <p id="wishList">Price ${wish.price}</p>
         <p id="wishList">User {wish.user} </p>
         <p id="wishList">Picture - {`COMING SOON`}</p>
         <button

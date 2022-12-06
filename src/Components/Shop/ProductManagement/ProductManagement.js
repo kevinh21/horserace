@@ -5,12 +5,12 @@ import "./ProductManagement.css";
 
 function ProductManagement() {
   const [productid, setProductid] = useState("");
-  const [vendor, setVendor] = useState("");
+  const [name, setName] = useState("");
   const [item, setItem] = useState("");
   const [description, setDescription] = useState("");
   const [image, setImage] = useState("");
   const [retail, setRetail] = useState("");
-  const [sale, setSale] = useState("");
+  const [price, setPrice] = useState("");
   const [productList, setProductList] = useState([]);
   const [updateRecord, setUpdateRecord] = useState("");
 
@@ -23,12 +23,12 @@ function ProductManagement() {
   const submitProduct = () => {
     Axios.post("http://localhost:3001/products", {
       productid: productid,
-      vendor: vendor,
+      name: name,
       item: item,
       description: description,
       image: image,
       retail: retail,
-      sale: sale,
+      price: price,
     });
     console.log(productid, setProductid);
 
@@ -36,12 +36,12 @@ function ProductManagement() {
       ...productList,
       {
         productid: productid,
-        vendor: vendor,
+        name: name,
         item: item,
         description: description,
         image: image,
         retail: retail,
-        sale: sale,
+        price: price,
       },
     ]);
     // submitProduct("");
@@ -51,12 +51,12 @@ function ProductManagement() {
     <div key={index}>
       <div id="card">
         <div id="productList">Item Number: {product.productid} </div>
-        <h3 id="productList">Vendor - {product.vendor} </h3>
+        <h3 id="productList">Name - {product.name} </h3>
         <p id="productList">Item - {product.item} </p>
         <p id="productList">Desc. - {product.description} - </p>
         <p id="productList">{`COMING SOON`} </p>
         <p id="productList">Retail - {product.retail} </p>
-        <p id="productList">Sale - {product.sale}</p>
+        <p id="productList">Price - {product.price}</p>
         <button
           onClick={() => {
             deleteProduct(product.productid);
@@ -76,8 +76,8 @@ function ProductManagement() {
   <form id="new-record-form">
     <label for="new-record-item">New Item</label>
     <input type="text" id="new-task-title" name="new-task-title">
-    <label for="vendor">Vendor</label>
-    <input type="text" id="vendor" name="vendor">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name">
     <button type="submit">Add</button>
   </form> */}
         <button
@@ -85,7 +85,7 @@ function ProductManagement() {
             updateProduct(product.productid, updateRecord);
           }}
         >
-          Change Sale $$
+          Change Price $$
         </button>
       </div>
     </div>
@@ -93,14 +93,14 @@ function ProductManagement() {
   // console.log(mapList);
   console.log("Kevin", updateRecord);
 
-  const updateProduct = (productid, sale) => {
+  const updateProduct = (productid, price) => {
     Axios.put("http://localhost:3001/products", {
       productid: productid,
-      // vendor: vendor,
+      // name: name,
       // item: item,
       // description: description,
       // retail: retail,
-      sale: sale,
+      price: price,
     });
     setUpdateRecord("");
   };
@@ -124,12 +124,12 @@ function ProductManagement() {
     <div className="products">
       <h1 id="productTitle">PRODUCT MANAGEMENT</h1>
       <div className="form">
-        <label>Vendor</label>
+        <label>Name</label>
         <input
           type="text"
-          name="vendor"
+          name="name"
           onChange={(e) => {
-            setVendor(e.target.value);
+            setName(e.target.value);
           }}
         />
         <label>Item Name</label>
@@ -166,12 +166,12 @@ function ProductManagement() {
             setRetail(e.target.value);
           }}
         />
-        <label>Sale</label>
+        <label>Price</label>
         <input
           type="text"
-          name="sale"
+          name="price"
           onChange={(e) => {
-            setSale(e.target.value);
+            setPrice(e.target.value);
           }}
         />
         <button onClick={submitProduct}>Submit</button>

@@ -29,11 +29,11 @@ function Products() {
       <li id="myproductListDataWrapper">
         {/* <hr id="hr" /> */}
         <span id="productDataSKU"> {myProduct.productid}</span>
-        <span id="productDataVendor"> {myProduct.vendor}</span>
+        <span id="productDataName"> {myProduct.name}</span>
         <span id="productDataItem"> {myProduct.item}</span>
         <span id="productDataDescription">{myProduct.description}</span>
         <span id="productDataRetail"> {myProduct.retail}</span>
-        <span id="productDatasale"> {myProduct.sale}</span>
+        <span id="productDataprice"> {myProduct.price}</span>
       </li>
     </ul>
   ));
@@ -46,11 +46,11 @@ function Products() {
       </div>
       <div className="productTitleHeaders">
         <span id="productProductSKU">SKU </span>
-        <span id="productVendorHeader">Vendor</span>
+        <span id="productNameHeader">Name</span>
         <span id="productItemHeader">ITEM </span>
         <span id="productDescriptionHeader">Description</span>
         <span id="productRetailHeader">Retail</span>
-        <span id="productSaleHeader">Sale</span>
+        <span id="productPriceHeader">Price</span>
       </div>
       <div id="productDataList">
         <br />

@@ -12,7 +12,7 @@ let db = new sqlite3.Database(
   }
 );
 
-//Execute functions in sequence and assure that each on finishes 
+//Execute functions in sequence and assure that each on finishes
 //Serialize() Selects rows in sequence
 db.serialize(() => {
   db.each(`SELECT * FROM horses`, (err, row) => {
@@ -45,14 +45,14 @@ db.close((err) => {
 });
 /////////////////////////////////////////////////////////////
 
-let sql = `SELECT vendor, item, description, retail, sale FROM products`;
+let sql = `SELECT name, item, description, retail, price FROM products`;
 
 db.all(sql, [], (err, rows) => {
   if (err) {
     throw err;
   }
   rows.forEach((row) => {
-    console.log(row.vendor, row.item, row.description, row.retail, row.sale);
+    console.log(row.name, row.item, row.description, row.retail, row.price);
   });
 });
 

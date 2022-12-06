@@ -26,9 +26,9 @@ import RaceSchedule from "./Components/RaceSchedule/RaceSchedule";
 import RaceScreens from "./Components/RaceScreens/RaceScreens";
 import ProductManagement from "./Components/Shop/ProductManagement/ProductManagement";
 import ProductBrowse from "./Components/Shop/ProductBrowse/ProductBrowse";
-import Cart from "./Components/Shop/cart/Cart";
+import Cart from "./Components/Shop/Cart/Cart";
 import Wish from "./Components/Shop/WishList/WishList";
-import Checkout from "./Components/Shop/cart/Checkout";
+import Checkout from "./Components/Shop/Cart/Checkout";
 import Returns from "./Components/Shop/Returns/Returns";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

@@ -41,10 +41,10 @@ function getHorses() {
 //   return new Promise(function (resolve, reject) {
 //     let db = new sqlite3.Database("../db/horserace.sqlite3");
 
-//     // let sqlInsert =  `INSERT INTO products(vendor, item, description, retail, sale) VALUES(?,?,?,?,?)`
+//     // let sqlInsert =  `INSERT INTO products(name, item, description, retail, price) VALUES(?,?,?,?,?)`
 
 //     db.run(
-//       `INSERT INTO products(vendor, item, description, retail, sale) VALUES(?,?,?,?,?)`,
+//       `INSERT INTO products(name, item, description, retail, price) VALUES(?,?,?,?,?)`,
 //       [],
 
 //       function (err) {
@@ -68,7 +68,7 @@ function getHorses() {
 //   return new Promise(function (resolve, reject) {
 //     let db = new sqlite3.Database("../db/horserace.sqlite3");
 //     let data = [];
-//     let sql = `UPDATE products SET vendor = ?, item = ?, description = ?, retail = ?, sale = ? WHERE productid = ?`;
+//     let sql = `UPDATE products SET name = ?, item = ?, description = ?, retail = ?, price = ? WHERE productid = ?`;
 //     db.run(sql, data, function (err) {
 //       if (err) {
 //         return console.error(err.message);
