@@ -3,18 +3,21 @@
 const horseModel = require("./horseModel");
 const cartModel = require("./cartModel");
 const wishModel = require("./wishModel");
+const checkoutModel = require("./checkoutModel");
 const express = require("express");
 const wish = express();
 const app = express();
 const cart = express();
+const checkout = express();
 
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const port = 3001;
 const sqlite3 = require("sqlite3").verbose();
-const productInsert = `INSERT INTO products(name, item, description, retail, price) VALUES(?,?,?,?,?)`;
-const cartInsert = `INSERT INTO cart(productid, item, price, user, count) VALUES(?,?,?,?,?)`;
-const wishInsert = `INSERT INTO wish(productid, item, price, user) VALUES(?,?,?,?)`;
+const productInsert = `INSERT INTO products(name, item, description, retail, price, image, count) VALUES(?,?,?,?,?,?,?)`;
+const cartInsert = `INSERT INTO cart(productid, item, price,  image, user, count) VALUES(?,?,?,?,?,?)`;
+const wishInsert = `INSERT INTO wish(productid, item, price,  image, user, count) VALUES(?,?,?,?,?,?)`;
+const checkoutInsert = `INSERT INTO checkout(productid, item, price,  image, user, count, date, tax, orderNumber) VALUES(?,?,?,?,?,?,?,?,?)`;
 
 new Promise(function (resolve, reject) {
   /////////////////Products & Horse ACCESS////////////////////////////////
@@ -69,6 +72,23 @@ new Promise(function (resolve, reject) {
     next();
   });
 
+  /////////////////CHECKOUT TABLE ACCESS////////////////////////////////
+  checkout.use(bodyParser.urlencoded({ extended: true }));
+  checkout.use(cors());
+  checkout.use(express.json());
+  checkout.use(function (req, res, next) {
+    res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+    res.setHeader(
+      "Access-Control-Allow-Methods",
+      "GET,POST,PUT,DELETE,OPTIONS"
+    );
+    res.setHeader(
+      "Access-Control-Allow-Headers",
+      "Content-Type, Access-Control-Allow-Headers"
+    );
+    next();
+  });
+
   /////////////BEGIN PRODUCTS & HORSE SQL FUNCTIONS//////////////////////
   ////////////////
   //read function
@@ -99,10 +119,12 @@ new Promise(function (resolve, reject) {
     const description = req.body.description;
     const retail = req.body.retail;
     const price = req.body.price;
+    const image = req.body.image;
+    const count = req.body.count;
     db.serialize(() => {
       db.run(
         productInsert,
-        [name, item, description, retail, price],
+        [name, item, description, retail, price, image, count],
         (err) => {
           if (err) {
             return console.log(err.message);
@@ -137,10 +159,12 @@ new Promise(function (resolve, reject) {
     const description = req.body.description;
     const retail = req.body.retail;
     const price = req.body.price;
-    const dbUpdate = `UPDATE products SET name = ?, item = ?, description = ?, retail = ?, price = ? WHERE productid = ?`;
+    const image = req.body.image;
+    const count = req.body.count;
+    const dbUpdate = `UPDATE products SET name = ?, item = ?, description = ?, retail = ?, price = ?, image = ?, count = ? WHERE productid = ?`;
     db.run(
       dbUpdate,
-      [name, item, description, retail, price, instance],
+      [name, item, description, retail, price, image, count, instance],
       (err) => {
         if (err) {
           return console.log(err.message);
@@ -205,15 +229,20 @@ new Promise(function (resolve, reject) {
     const productid = req.body.productid;
     const item = req.body.item;
     const price = req.body.price;
+    const image = req.body.image;
     const user = req.body.user;
     const count = req.body.count;
 
     db.serialize(() => {
-      db.run(cartInsert, [productid, item, price, user, count], (err) => {
-        if (err) {
-          return console.log(err.message);
+      db.run(
+        cartInsert,
+        [productid, item, price, image, user, count],
+        (err) => {
+          if (err) {
+            return console.log(err.message);
+          }
         }
-      });
+      );
       console.log(`A row has been inserted with row id ${this.lastID}`);
       db.close((err) => {
         if (err) {
@@ -302,15 +331,20 @@ new Promise(function (resolve, reject) {
     const productid = req.body.productid;
     const item = req.body.item;
     const price = req.body.price;
+    const image = req.body.image;
     const user = req.body.user;
-    // const image = req.body.image;
+    const count = req.body.count;
 
     db.serialize(() => {
-      db.run(wishInsert, [productid, item, price, user], (err) => {
-        if (err) {
-          return console.log(err.message);
+      db.run(
+        wishInsert,
+        [productid, item, price, image, user, count],
+        (err) => {
+          if (err) {
+            return console.log(err.message);
+          }
         }
-      });
+      );
       console.log("product-ID", productid);
 
       console.log(`A row has been inserted with row id ${this.lastID}`);
@@ -339,12 +373,18 @@ new Promise(function (resolve, reject) {
     const item = req.body.item;
     const user = req.body.user;
     const price = req.body.price;
-    const wishUpdate = `UPDATE wish SET productid = ?, item = ?, user = ?, price = ? WHERE wishid = ?`;
-    db.run(wishUpdate, [productid, item, user, price, instance], (err) => {
-      if (err) {
-        return console.log(err.message);
+    const image = req.body.image;
+    const count = req.body.count;
+    const wishUpdate = `UPDATE wish SET productid = ?, item = ?, user = ?, price = ?, image = ? , count = ? WHERE wishid = ?`;
+    db.run(
+      wishUpdate,
+      [productid, item, user, price, image, count, instance],
+      (err) => {
+        if (err) {
+          return console.log(err.message);
+        }
       }
-    });
+    );
     console.log(`A record has been updated ${req.body.wishid}`);
     db.close((err) => {
       if (err) {
@@ -372,11 +412,117 @@ new Promise(function (resolve, reject) {
     });
   });
 });
+
+////////////////////BEGIN CHECKOUT SQL FUNCTIONS///////////////////////////////////
+//////////////
+
+//read function
+checkout.get("/checkout", (req, res, next) => {
+  checkoutModel
+    .getCheckout()
+    .then((response) => {
+      res.status(200).send(response);
+    })
+    .catch((error) => {
+      res.status(500).send(error);
+    });
+});
+
+//"create(CHECKOUT INSERT)" function for "Products"
+checkout.post("/checkout", (req, res) => {
+  let db = new sqlite3.Database(
+    "../Components/db/horserace.sqlite3",
+    sqlite3.OPEN_READWRITE,
+    (err) => {
+      if (err) {
+        console.error(err.message);
+      }
+    }
+  );
+  const productid = req.body.productid;
+  const item = req.body.item;
+  const price = req.body.price;
+  const image = req.body.image;
+  const user = req.body.user;
+  const count = req.body.count;
+  const date = req.body.date;
+  const tax = req.body.tax;
+  const orderNumber = req.body.orderNumber;
+
+  db.serialize(() => {
+    db.run(
+      checkoutInsert,
+      [productid, item, price, image, user, count, date, tax, orderNumber],
+      (err) => {
+        if (err) {
+          return console.log(err.message);
+        }
+      }
+    );
+    console.log(`A row has been inserted with row id ${this.lastID}`);
+    db.close((err) => {
+      if (err) {
+        console.error(err.message);
+      }
+      console.log("Closed the database connection.");
+    });
+  });
+});
+
+// "update" function
+checkout.put("/checkout", (req, res) => {
+  let db = new sqlite3.Database(
+    "../Components/db/horserace.sqlite3",
+    sqlite3.OPEN_READWRITE,
+    (err) => {
+      if (err) {
+        console.error(err.message);
+      }
+    }
+  );
+  const instance = req.body.checkoutid;
+  // const productid = req.body.productid;
+  // const item = req.body.item;
+  // const price = req.body.price;
+  // const user = req.body.user;
+  const count = req.body.count;
+  const checkoutUpdate = `UPDATE checkout SET count = ? WHERE checkoutid = ?`;
+  db.run(checkoutUpdate, [count, instance], (err) => {
+    if (err) {
+      return console.log(err.message);
+    }
+  });
+  console.log(`A record has been updated ${req.body.checkoutid}`);
+  db.close((err) => {
+    if (err) {
+      console.error(err.message);
+    }
+    console.log("Closed the database connection.");
+  });
+});
+
+checkout.delete(`/checkout/:checkoutid`, (req, res) => {
+  let db = new sqlite3.Database(
+    "../Components/db/horserace.sqlite3",
+    sqlite3.OPEN_READWRITE,
+    (err) => {
+      if (err) {
+        console.error(err.message);
+      }
+    }
+  );
+  const idDeleted = req.params.checkoutid;
+  const sqlDelete = `DELETE FROM checkout WHERE checkoutid = (?)`;
+  db.run(sqlDelete, idDeleted, (err, result) => {
+    if (err) console.log("CHECKOUT-DELETE", err.message);
+    // db.close(err);
+  });
+});
+
 ///////////////////BEGIN PORT MAPPING/////////////////////////////////////
 cart.listen(4001);
 wish.listen(5001);
-cart.listen(4002);
-wish.listen(5002);
+checkout.listen(6001);
 
 // horse.listen();
 app.listen(port, () => {

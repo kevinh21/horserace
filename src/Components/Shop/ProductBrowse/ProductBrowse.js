@@ -20,12 +20,13 @@ function ProductList() {
   const data = productList.map((product, index) => (
     <div key={index}>
       <div className="cards">
-        <img id="picture" src={product.image} />
+        <img id="picture" alt="cartPic" src={product.image} />
         <h3 id="productData">SKU # {product.productid} </h3>
-        <div id="productData">Name - {product.name} - </div>
-        <p id="productData">Item - {product.item} - </p>
-        <p id="productData">Retail - {product.retail} - </p>
+        <div id="productData">Name - {product.name} </div>
+        <p id="productData">Item - {product.item} </p>
+        <p id="productData">Retail - ${product.retail} </p>
         <p id="productData">Price - ${product.price}</p>
+        {/* <p id="productData">Count - {product.count}</p> */}
         <button
           id="button"
           onClick={() => {
@@ -38,7 +39,7 @@ function ProductList() {
     </div>
   ));
 
-  console.log("ProductList-KH", productList);
+  console.log("Product-List", productList);
   //NEED TO ADD useEfect and retrieve user table
   const sendToCart = (product, user) => {
     Axios.post("http://localhost:4001/cart", {
@@ -46,7 +47,8 @@ function ProductList() {
       item: product.item,
       price: product.price,
       user: "JACK SMITH",
-      image: image,
+      image: product.image,
+      count: product.count,
     });
   };
 

@@ -14,13 +14,13 @@ const Nav = () => {
           ></img>
         </div>
         <ul className="navMenu">
-          <li id="navHome">
+          {/* <li id="navHome">
             <NavLink to="/home"> Home </NavLink>
-          </li>
-          <li id="navScreens">
-            <NavLink to="/raceScreens"> Screens </NavLink>
-          </li>
-          <li>
+          </li> */}
+          {/* <li id="navScreens">
+            <NavLink to="/raceScreens"> TV Screens </NavLink>
+          </li> */}
+          {/* <li>
             <NavLink to="/management">Management</NavLink>
           </li>
           <li>
@@ -90,28 +90,32 @@ const Nav = () => {
                 <NavLink to="/race"> Addiction ? </NavLink>
               </li>
             </ul>
+          </li> */}
+          {/* <ul id="shopping"> */}
+          <div className="NavLink"></div>
+          <li>
+            <NavLink to="/productBrowse"> Products </NavLink>
           </li>
-          <ul id="shopping">
-            <li>
-              <NavLink to="/productBrowse">Browse products </NavLink>
-            </li>
-            <li>
-              <NavLink to="/productManagement">Manage Products </NavLink>
-            </li>
-            <li>
-              <NavLink to="/cart">Cart</NavLink>
-            </li>
-            <li>
-              <NavLink to="/wish">Wish List</NavLink>
-            </li>
-            <li>
-              <NavLink to="/checkout">Checkout</NavLink>
-            </li>
-            <li>
-              <NavLink to="/returns">Returns</NavLink>
-            </li>
-          </ul>
+
+          <li>
+            <NavLink to="/cart">Cart</NavLink>
+          </li>
+
+          <li>
+            <NavLink to="/checkout">Checkout</NavLink>
+          </li>
+          <li>
+            <NavLink to="/wish">Wish List</NavLink>
+          </li>
+          <li>
+            <NavLink to="/returns">Returns</NavLink>
+          </li>
+
+          <li>
+            <NavLink to="/productManagement">Manage </NavLink>
+          </li>
         </ul>
+        {/* </ul> */}
       </nav>
     </div>
   );

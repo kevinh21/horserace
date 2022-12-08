@@ -50,11 +50,11 @@ function ProductManagement() {
   const mapList = productList.map((product, index) => (
     <div key={index}>
       <div id="card">
+        <img id="picture" alt="cartPic" src={product.image} />
         <div id="productList">Item Number: {product.productid} </div>
         <h3 id="productList">Name - {product.name} </h3>
         <p id="productList">Item - {product.item} </p>
         <p id="productList">Desc. - {product.description} - </p>
-        <p id="productList">{`COMING SOON`} </p>
         <p id="productList">Retail - {product.retail} </p>
         <p id="productList">Price - {product.price}</p>
         <button
@@ -174,6 +174,7 @@ function ProductManagement() {
             setPrice(e.target.value);
           }}
         />
+        
         <button onClick={submitProduct}>Submit</button>
 
         <div className="mapList">{mapList}</div>

@@ -2,12 +2,13 @@
 }
 
 .navWrapper {
-  padding-bottom: 78px;
+  padding-bottom: 4%;
+  width: 98%;
   /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
 }
 
 .navLogo {
-  margin: 20px;
+  margin: 12%;
   z-index: +2;
   width: 64px;
 }
@@ -19,12 +20,10 @@
   position: fixed;
   font-size: 16px;
   color: black;
-  /* background-color: goldenrod; */
-  width: 100%;
-  height: 16%;
+  background-color: white;
+  width: 98%;
+  height: 14%;
   /* box-shadow: 0 12px 12px rgba(43, 12, 129, 0.5); */
-  /* background-color: goldenrod; */
-  /* box-shadow: 0rem 0rem 0.5rem rgba(0, 0, 0, 0.1); */
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   z-index: +2;
   font-family: "Poppins", sans-serif;
@@ -37,14 +36,13 @@
   flex-wrap: nowrap;
   justify-content: space-between;
   list-style: none;
-
   margin-left: 6%;
-  padding-top: 1.5%;
+  padding-top: 2.5%;
   width: 70%;
 }
 
 .navMenu li {
-  /* background-color: goldenrod; */
+  /* background-color: white; */
 }
 
 a {
@@ -52,7 +50,7 @@ a {
   color: black;
   font-family: "Poppins", sans-serif;
   letter-spacing: 1px;
-  font-size: 12px;
+  font-size: 16px;
 }
 
 a:hover {
@@ -64,7 +62,7 @@ a:hover {
 #navScreens {
   display: block;
   list-style-type: none;
-  background-color: transparent;
+  /* background-color: transparent; */
   padding-bottom: 8px;
   padding-right: 12px;
   padding-left: 12px;
@@ -86,7 +84,7 @@ a:hover {
 #navHowTo {
   display: inline-block;
   list-style-type: none;
-  /* background-color: goldenrod; */
+  background-color: white;
   text-align: left;
 }
 
@@ -95,7 +93,7 @@ a:hover {
   width: 140px;
   padding-top: 4%;
   display: none;
-  /* background-color: goldenrod; */
+  /* background-color: white; */
   margin-bottom: 8px;
 }
 #navHowTo::before {
@@ -112,12 +110,12 @@ a:hover {
 #navMakeSelections {
   display: block;
   list-style-type: none;
-  /* background-color: goldenrod; */
+  background-color: white;
 }
 
 #navMakeSelections li {
   display: none;
-  /* background-color: goldenrod; */
+  background-color: white;
   width: 130px;
   padding-top: 8px;
   padding-bottom: 8px;
@@ -143,7 +141,7 @@ a:hover {
   display: block;
   list-style-type: none;
   padding-bottom: 8px;
-  /* background-color: goldenrod; */
+  background-color: white;
 }
 
 .navData li {
@@ -151,7 +149,7 @@ a:hover {
   width: 140px;
   padding-top: 4%;
   display: none;
-  /* background-color: goldenrod; */
+  background-color: white;
 }
 
 .navData::before {
@@ -169,7 +167,7 @@ a:hover {
   display: block;
   list-style-type: none;
   padding-bottom: 8px;
-  /* background-color: goldenrod; */
+  background-color: white;
 }
 
 #navStartRace li {
@@ -177,7 +175,7 @@ a:hover {
   width: 140px;
   padding-top: 4%;
   display: none;
-  /* background-color: goldenrod; */
+  background-color: white;
 }
 
 #navStartRace::before {
@@ -195,7 +193,7 @@ a:hover {
   display: block;
   list-style-type: none;
   padding-bottom: 8px;
-  /* background-color: goldenrod; */
+  background-color: white;
 }
 
 #shopping li {
@@ -205,7 +203,7 @@ a:hover {
   padding-left: 12%;
   padding-bottom: 8%;
   display: none;
-  /* background-color: goldenrod; */
+  background-color: white;
 }
 
 #shopping::before {
@@ -217,4 +215,13 @@ a:hover {
   display: block;
   width: 140px;
   z-index: +2;
+}
+
+.NavLink {
+  display: flex;
+  flex-direction: row;
+  margin-top: 200px;
+  align-items: center;
+  height: 400px;
+  background-color: rgb(123, 14, 232);
 }

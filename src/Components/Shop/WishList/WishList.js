@@ -1,7 +1,8 @@
 //must submit to different port for each shotable
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
-// import "./Wish.css";
+import "./WishList.css";
+import "../ProductBrowse/ProductBrowse.css";
 
 function Wish() {
   const [wishid, setWishid] = useState("");
@@ -10,6 +11,7 @@ function Wish() {
   const [image, setImage] = useState("");
   const [price, setPrice] = useState("");
   const [user, setUser] = useState("");
+  const [count, setCount] = useState("");
   const [wishList, setWishList] = useState([]);
 
   useEffect(() => {
@@ -26,6 +28,7 @@ function Wish() {
       price: cart.price,
       user: cart.user,
       image: cart.image,
+      count: cart.count,
     });
 
     setWishList([
@@ -37,20 +40,24 @@ function Wish() {
         price: price,
         user: user,
         image: image,
+        count: count,
       },
     ]);
   };
 
   const mapList = wishList.map((wish, index) => (
     <div key={index}>
-      <div id="card">
-        <div id="wishList">Item Number: {wish.wishid} </div>
-        <h3 id="wishList">SKU # {wish.productid} </h3>
-        <p id="wishList">Item - {wish.item} </p>
-        <p id="wishList">Price ${wish.price}</p>
-        <p id="wishList">User {wish.user} </p>
-        <p id="wishList">Picture - {`COMING SOON`}</p>
+      <div className="wishCards">
+        <img id="picture" alt="wishPic" src={wish.image} />
+        {/* <div id="wishData">Item Number: {wish.wishid} </div> */}
+        <h3 id="wishData">SKU # {wish.productid} </h3>
+        <p id="wishData">Item - {wish.item} </p>
+        <p id="wishData">Price - ${wish.price}</p>
+        {/* <p id="wishData">Count - {wish.count}</p> */}
+        {/* <p id="wishData">User - {wish.user} </p> */}
+        <div className="mapWrapper"></div>
         <button
+          id="wishButton"
           onClick={() => {
             deleteWish(wish.wishid);
           }}
@@ -59,12 +66,13 @@ function Wish() {
         </button>
 
         <button
+          id="wishButton"
           onClick={() => {
             sendToCart(wish);
             deleteWish(wish.wishid);
           }}
         >
-          Add to Cart (+)
+          Return to Cart (+)
         </button>
       </div>
     </div>
@@ -78,11 +86,8 @@ function Wish() {
   };
 
   return (
-    <div className="wish">
-      <h1 id="productTitle">WISH LIST</h1>
-
-      {/* <button onClick={submitWish}>Check Out</button> */}
-
+    <div className="wishContainer">
+      <h1 id="wishTitle">WISH LIST</h1>
       <div className="mapList">{mapList}</div>
     </div>
   );

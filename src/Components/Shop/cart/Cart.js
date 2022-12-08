@@ -1,7 +1,10 @@
 //Clean UP - must submit to different port for each table
 import React, { useState, useEffect, useMemo } from "react";
 import Axios from "axios";
-// import "./Cart.css";
+import "./Cart.css";
+import "../ProductBrowse/ProductBrowse.css";
+// import Checkout from "./Checkout";
+import { NavLink } from "react-router-dom";
 
 function Cart(props) {
   const [cartid, setCartid] = useState("");
@@ -11,7 +14,7 @@ function Cart(props) {
   const [price, setPrice] = useState("");
   const [user, setUser] = useState("");
   const [cart, setCart] = useState("");
-  const [count, setCount] = useState(1);
+  const [count, setCount] = useState("1");
   const [data, setData] = useState("");
   const [total, setTotal] = useState();
   const [cartList, setCartList] = useState([]);
@@ -20,9 +23,9 @@ function Cart(props) {
     (props) => {
       Axios.get("http://localhost:4001/cart").then((response) => {
         setCartList(response.data);
-        const fileData = JSON.stringify(response.data);
-        const output = `const data = {products: ${fileData} }`;
-        setData(output);
+        // const fileData = JSON.stringify(response.data);
+        // const output = `const data = {products: ${fileData} }`;
+        // setData(output);
         console.log("Response.data", response.data);
       });
     },
@@ -32,12 +35,12 @@ function Cart(props) {
 
   useEffect(() => {
     let tempTotal = 0;
-    cartList.forEach((cartItem, index) => {
+    cartList.forEach((cartid, index) => {
       if (
-        !isNaN(parseFloat(cartItem.price)) &&
-        !isNaN(parseFloat(cartItem.count))
+        !isNaN(parseFloat(cartid.price)) &&
+        !isNaN(parseFloat(cartid.count))
       )
-        tempTotal += parseFloat(cartItem.price) * parseFloat(cartItem.count);
+        tempTotal += parseFloat(cartid.price) * parseFloat(cartid.count);
     });
     console.log(tempTotal);
     setTotal(tempTotal);
@@ -51,6 +54,7 @@ function Cart(props) {
       price: wish.price,
       user: wish.user,
       image: wish.image,
+      count: wish.count,
     });
 
     setCartList([
@@ -68,58 +72,68 @@ function Cart(props) {
   };
 
   const mapList = cartList.map((cart, index) => {
-    const salePrice = (cart) => {
-      setPrice(cart.price);
-      // (salePrice.reduce((a, v) => (a = a + v.price), 0));
-      return;
-    };
-    console.log(cart.price);
-
     return (
       <div key={index}>
-        <div id="card">
-          <div id="cartList">Item Number: {cart.cartid} </div>
-          <h3 id="cartList">SKU # {cart.productid} </h3>
-          <p id="cartList">Item - {cart.item} </p>
-          <p id="cartList">Price ${cart.price}</p>
-          <p id="cartList">User {cart.user} </p>
-          <p id="countCart">Qty - {cart.count} </p>
-          <p id="imageCart">Picture - {`COMING SOON`}</p>
-          <p id="subTotal">
+        <div className="cartCards">
+          <img id="picture" alt="cartPic" src={cart.image} />
+          <div id="cartData">Item Number: {cart.cartid} </div>
+          <h3 id="cartData">SKU # {cart.productid} </h3>
+          <p id="cartData">Item - {cart.item} </p>
+          <p id="cartData">Price - ${cart.price}</p>
+          {/* <p id="cartData">User - {cart.user} </p> */}
+          <p id="cartData">Qty - {cart.count} </p>
+          <p id="cartData">
             SubTotal - ${parseFloat(cart.price) * parseFloat(cart.count)}
           </p>
+          <div className="buttonGroupCart">
+            <div id="qtyBtnGroup">
+              <input
+                id="updateQty"
+                type="number"
+                onChange={(e) => {
+                  setCount(e.target.value);
+                }}
+              />
+              <div className="cartButtons">
+                <button
+                  id="buttonChange"
+                  onClick={() => {
+                    changeCartQty(
+                      cart.cartid,
+                      productid,
+                      item,
+                      price,
+                      user,
+                      count
+                    );
+                    setPrice(price);
+                  }}
+                >
+                  Enter Qty.
+                </button>
+              </div>
 
-          <p id="data"> {data.price} </p>
-          <button
-            onClick={() => {
-              deleteCart(cart.cartid);
-            }}
-          >
-            Remove (-)
-          </button>
-          <input
-            type="number"
-            id="updateCount"
-            onChange={(e) => {
-              setCount(e.target.value);
-            }}
-          />
-          <button
-            onClick={() => {
-              changeCartQty(cart.cartid, productid, item, price, user, count);
-              setPrice(price);
-            }}
-          >
-            Enter Qty.
-          </button>
-          <button
-            onClick={() => {
-              sendToWishList(cart);
-              deleteCart(cart.cartid);
-            }}
-          >
-            Save Wishlist (+)
-          </button>
+              <div className="alignButtons">
+                <button
+                  id="buttonRemove"
+                  onClick={() => {
+                    deleteCart(cart.cartid);
+                  }}
+                >
+                  Remove Item (-)
+                </button>
+                <button
+                  id="buttonSaveWish"
+                  onClick={() => {
+                    sendToWishList(cart);
+                    deleteCart(cart.cartid);
+                  }}
+                >
+                  Save Wishlist (+)
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     );
@@ -135,7 +149,6 @@ function Cart(props) {
       count: count,
     });
     setCount("");
-    // console.log("AFTER SET Count", cartid, count);
   };
 
   const deleteCart = (cartid) => {
@@ -145,41 +158,20 @@ function Cart(props) {
     });
   };
 
-  // const objects = [{ x: 1 }, { x: 2 }, { x: 9 }];
-  // const sum = objects.reduce(
-  //   (accumulator, currentValue) => accumulator + currentValue.x,
-  //   0
-  // );
-  // console.log(sum);
-
-  // let arrm = Object.entries(mapList);
-  // let arrc = Object.entries(cartList);
-
-  // const outputData = JSON.stringify(mapList);
-  // // const blob = new Blob([fileData], { type: "text/plain" });
-  // // const url = URL.createObjectURL(blob);
-  // // const link = document.createElement("a");
-  // // link.download = "data.js";
-  // // link.href = url;
-  // // link.click();
-
-  // const output = (`const data = {
-  //   products: ${data} }`);
-  // setData(output);
-  // console.log(output);
-
   return (
-    <div className="cart">
-      <h1 id="productTitle">SHOPPING CART</h1>
-      <div>{total}</div>
+    <div className="cartContainer">
+      <div className="checkout"></div>
+      <div id="cartTitle">
+        Your Cart
+        <div id="cartTotal"> Items SubTotal: </div>
+        <div id="total">
+          ${total}
+          <NavLink id="buttonCheckout" to="/checkout">
+            CHECKOUT HERE{" "}
+          </NavLink>
+        </div>
+      </div>
       <div className="mapList"> {mapList} </div>
-      <br />
-      <br />
-      {}
-      <br />
-      <br />
-      <br />
-      <br />
       <br />
     </div>
   );

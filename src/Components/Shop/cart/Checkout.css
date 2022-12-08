@@ -1,0 +1,52 @@
+.checkoutContainer {
+  display: flex;
+  margin-top: 8%;
+  width: 90%;
+  justify-content: space-evenly;
+}
+
+#checkoutTitle {
+  width: 70%;
+  /* margin-top: 8%; */
+  font-size: 38pt;
+  text-align: center;
+}
+
+#checkoutSubTotal {
+  font-size: 16pt;
+  margin-top: 4%;
+}
+
+#checkoutTax {
+  font-size: 16pt;
+  margin-top: 4%;
+}
+
+#checkoutTotal {
+  padding-top: 4%;
+}
+
+#checkoutCards {
+  display: flex;
+  height: 100px;
+  margin-top: 16%;
+}
+
+#checkoutSummary {
+  font-size: 16pt;
+  width: 200px;
+  margin-bottom: 4%;
+}
+
+.checkoutList {
+  margin-left: 8%;
+  width: 16%;
+  font-size: small;
+  padding: 8px;
+}
+.checkoutInfo{
+    display: flex;
+    flex-direction: column;
+    margin-top: 12%;
+    margin-bottom: 40px;
+}
