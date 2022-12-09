@@ -44,9 +44,18 @@
   font-size: small;
   padding: 8px;
 }
-.checkoutInfo{
-    display: flex;
-    flex-direction: column;
-    margin-top: 12%;
-    margin-bottom: 40px;
+.checkoutInfo {
+  display: flex;
+  flex-direction: column;
+  margin-top: 12%;
+  margin-bottom: 40px;
+}
+#payButton {
+  display: flex;
+  margin-left: 26%;
+  width: 76px;
+  margin-top: 8px;
+  padding: 8px;
+  align-items: center;
+  background-color: green;
 }

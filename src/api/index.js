@@ -464,7 +464,7 @@ checkout.post("/checkout", (req, res) => {
       if (err) {
         console.error(err.message);
       }
-      console.log("Closed the database connection.");
+      console.log("Closed the checkout database connection.");
     });
   });
 });

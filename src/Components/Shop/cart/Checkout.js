@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
 import "./Checkout.css";
+import { now } from "moment/moment";
 
 function Checkout(props) {
   const [cartid, setCartid] = useState("");
@@ -15,7 +16,8 @@ function Checkout(props) {
   const [data, setData] = useState("");
   const [total, setTotal] = useState();
   const [cartList, setCartList] = useState([]);
-  const [orderNumber, setOrderNumber] = useState(0);
+  const [date, setDate] = useState("");
+  const [orderNumber, setOrderNumber] = useState(now);
 
   useEffect(
     (props) => {
@@ -46,8 +48,18 @@ function Checkout(props) {
     setTotal(subTotal);
   }, [cartList]);
 
-  const sendToCheckout = (checkout) => {
+  const checkout = () => {
     setOrderNumber(orderNumber + 1);
+    console.log(orderNumber);
+    cartList.forEach((cartItem, index) => {
+      cartItem.orderNumber = orderNumber;
+      sendToCheckout(cartItem);
+      deleteCart(cartItem.cartid);
+      console.log("54 here", cartItem);
+    });
+  };
+
+  const sendToCheckout = (checkout) => {
     Axios.post("http://localhost:6001/checkout", {
       cartid: cartid,
       productid: checkout.productid,
@@ -60,7 +72,7 @@ function Checkout(props) {
       orderNumber: checkout.orderNumber,
     });
 
-    console.log(checkout);
+    console.log(cart);
 
     setCartList([
       ...cartList,
@@ -72,6 +84,8 @@ function Checkout(props) {
         user: user,
         image: image,
         count: count,
+        date: date,
+        orderNumber: orderNumber,
       },
     ]);
   };
@@ -86,17 +100,26 @@ function Checkout(props) {
           <p id="cartData">
             SubTotal - ${parseFloat(cart.price) * parseFloat(cart.count)}
           </p>
+          <button
+            id="buttoncheckout"
+            onClick={() => {
+              setOrderNumber(parseInt(orderNumber + 1));
+              sendToCheckout(cart);
+            }}
+          >
+            Pay Now
+          </button>
         </div>
       </div>
     );
   });
 
-  // const deleteCart = (cartid) => {
-  //   Axios.delete(`http://localhost:4001/cart/${cartid}`).then((response) => {
-  //     console.log(response);
-  //     setCartList(cartList.filter((item) => item.cartid !== cartid));
-  //   });
-  // };
+  const deleteCart = (cartid) => {
+    Axios.delete(`http://localhost:4001/cart/${cartid}`).then((response) => {
+      console.log(response);
+      setCartList(cartList.filter((item) => item.cartid !== cartid));
+    });
+  };
 
   return (
     <div className="checkoutContainer">
@@ -106,11 +129,14 @@ function Checkout(props) {
       </div>
       <div id="checkoutTitle">
         Checkout
-        <div id="checkoutSubTotal"> SubTotal: ${total / 1.075}</div>
+        <div id="checkoutSubTotal">
+          {" "}
+          SubTotal: ${(total / 1.075).toFixed(2)}
+        </div>
         <div id="checkoutTax">
-          Tax: ${total * 0.075}
+          Tax: ${(total * 0.075).toFixed(2)}
           <div>
-            <div id="checkoutTotal"> Total: ${total}</div>
+            <div id="checkoutTotal"> Total: ${(total * 1).toFixed(2)}</div>
           </div>
         </div>
         {/* (BUTTON BELOW NEEDS TO GENERATE A RANDOM NUMBER BY BASE + INCREMENT COUNTER) */}
@@ -119,6 +145,7 @@ function Checkout(props) {
             <button
               id="buttoncheckout"
               onClick={() => {
+                setOrderNumber(parseInt(orderNumber + 1));
                 sendToCheckout(cart);
               }}
             >
@@ -137,98 +164,95 @@ function Checkout(props) {
           />
         </div>
         <div>
-          <div className="checkoutInfo">
-            <label>First Name</label>
-            <input
-              type="text"
-              name="first"
-              // onChange={(e) => {
-              //   setName(e.target.value);
-              // }}
-            />
-            <label>Last Name</label>
-            <input
-              type="text"
-              name="last"
-              // onChange={(e) => {
-              //   setItem(e.target.value);
-              // }}
-            />
-            <label>Address</label>
-            <input
-              type="text"
-              name="address"
-              // onChange={(e) => {
-              //   setDescription(e.target.value);
-              // }}
-            />
-            <label>City</label>
-            <input
-              type="text"
-              name="city"
-              // onChange={(e) => {
-              //   setImage(e.target.value);
-              // }}
-            />
-            <label>State</label>
-            <input
-              type="text"
-              name="state"
-              // onChange={(e) => {
-              //   setPrice(e.target.value);
-              // }}
-            />{" "}
-            <label>Postal Code</label>
-            <input
-              type="text"
-              name="zip"
-              // onChange={(e) => {
-              //   setRetail(e.target.value);
-              // }}
-            />{" "}
-            <label>Phone Number</label>
-            <input
-              type="text"
-              name="phone"
-              // onChange={(e) => {
-              //   setRetail(e.target.value);
-              // }}
-            />{" "}
-            <label>Cart Number</label>
-            <input
-              type="text"
-              name="card"
-              // onChange={(e) => {
-              //   setRetail(e.target.value);
-              // }}
-            />{" "}
-            <label>Expiration Date</label>
-            <input
-              type="date"
-              name="expire"
-              // onChange={(e) => {
-              //   setRetail(e.target.value);
-              // }}
-            />
-            <label>Security Code</label>
-            <input
-              type="text"
-              name="cv"
-              // onChange={(e) => {
-              //   setRetail(e.target.value);
-              // }}
-            />
-            <div className="payButton">
-              <button
-                id="buttoncheckout"
-                onClick={() => {
-                  sendToCheckout(cart);
-                }}
-              >
-                Pay Now{" "}
-              </button>
+          <form>
+            <div className="checkoutInfo">
+              <label>First Name</label>
+              <input
+                type="text"
+                name="first"
+                // onChange={(e) => {
+                //   setName(e.target.value);
+                // }}
+              />
+              <label>Last Name</label>
+              <input
+                type="text"
+                name="last"
+                // onChange={(e) => {
+                //   setItem(e.target.value);
+                // }}
+              />
+              <label>Address</label>
+              <input
+                type="text"
+                name="address"
+                // onChange={(e) => {
+                //   setDescription(e.target.value);
+                // }}
+              />
+              <label>City</label>
+              <input
+                type="text"
+                name="city"
+                // onChange={(e) => {
+                //   setImage(e.target.value);
+                // }}
+              />
+              <label>State</label>
+              <input
+                type="text"
+                name="state"
+                // onChange={(e) => {
+                //   setPrice(e.target.value);
+                // }}
+              />{" "}
+              <label>Postal Code</label>
+              <input
+                type="text"
+                name="zip"
+                // onChange={(e) => {
+                //   setRetail(e.target.value);
+                // }}
+              />{" "}
+              <label>Phone Number</label>
+              <input
+                type="text"
+                name="phone"
+                // onChange={(e) => {
+                //   setRetail(e.target.value);
+                // }}
+              />{" "}
+              <label>Cart Number</label>
+              <input
+                type="text"
+                name="card"
+                // onChange={(e) => {
+                //   setRetail(e.target.value);
+                // }}
+              />{" "}
+              <label>Expiration Date</label>
+              <input
+                type="date"
+                name="expire"
+                // onChange={(e) => {
+                //   setRetail(e.target.value);
+                // }}
+              />
+              <label>Security Code</label>
+              <input
+                type="text"
+                name="cv"
+                // onChange={(e) => {
+                //   setRetail(e.target.value);
+                // }}
+              />
+              <div id="payButton">
+                <button type="button" id="buttoncheckout" onClick={checkout}>
+                  Pay Now 247{" "}
+                </button>
+              </div>
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </div>

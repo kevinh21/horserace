@@ -18,6 +18,7 @@ function Cart(props) {
   const [data, setData] = useState("");
   const [total, setTotal] = useState();
   const [cartList, setCartList] = useState([]);
+  const [date, setDate] = useState("");
 
   useEffect(
     (props) => {
@@ -34,16 +35,13 @@ function Cart(props) {
   console.log(data);
 
   useEffect(() => {
-    let tempTotal = 0;
+    let subTotal = 0;
     cartList.forEach((cartid, index) => {
-      if (
-        !isNaN(parseFloat(cartid.price)) &&
-        !isNaN(parseFloat(cartid.count))
-      )
-        tempTotal += parseFloat(cartid.price) * parseFloat(cartid.count);
+      if (!isNaN(parseFloat(cartid.price)) && !isNaN(parseFloat(cartid.count)))
+        subTotal += parseFloat(cartid.price) * parseFloat(cartid.count);
     });
-    console.log(tempTotal);
-    setTotal(tempTotal);
+    console.log(subTotal);
+    setTotal(subTotal);
   }, [cartList]);
 
   const sendToWishList = (wish) => {
@@ -67,6 +65,7 @@ function Cart(props) {
         user: user,
         image: image,
         count: count,
+        date: date,
       },
     ]);
   };
@@ -104,7 +103,9 @@ function Cart(props) {
                       item,
                       price,
                       user,
-                      count
+                      count,
+                      image,
+                      date
                     );
                     setPrice(price);
                   }}
