@@ -14,13 +14,13 @@ const Nav = () => {
           ></img>
         </div>
         <ul className="navMenu">
-          {/* <li id="navHome">
+          <li id="navHome">
             <NavLink to="/home"> Home </NavLink>
-          </li> */}
-          {/* <li id="navScreens">
+          </li>
+          <li id="navScreens">
             <NavLink to="/raceScreens"> TV Screens </NavLink>
-          </li> */}
-          {/* <li>
+          </li>
+          <li>
             <NavLink to="/management">Management</NavLink>
           </li>
           <li>
@@ -90,8 +90,8 @@ const Nav = () => {
                 <NavLink to="/race"> Addiction ? </NavLink>
               </li>
             </ul>
-          </li> */}
-          {/* <ul id="shopping"> */}
+          </li>
+          <ul id="shopping">
           <div className="NavLink"></div>
           <li>
             <NavLink to="/productBrowse"> Products </NavLink>
@@ -115,7 +115,7 @@ const Nav = () => {
             <NavLink to="/productManagement">Manage </NavLink>
           </li>
         </ul>
-        {/* </ul> */}
+        </ul>
       </nav>
     </div>
   );

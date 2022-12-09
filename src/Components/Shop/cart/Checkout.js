@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import Axios from "axios";
 import "./Checkout.css";
 import { now } from "moment/moment";
+import { NavLink } from "react-router-dom";
 
 function Checkout(props) {
   const [cartid, setCartid] = useState("");
@@ -247,9 +248,11 @@ function Checkout(props) {
                 // }}
               />
               <div id="payButton">
-                <button type="button" id="buttoncheckout" onClick={checkout}>
-                  Pay Now 247{" "}
-                </button>
+                <NavLink to="/returns">
+                  <button type="button" id="buttoncheckout" onClick={checkout}>
+                    Pay Now
+                  </button>
+                </NavLink>
               </div>
             </div>
           </form>

@@ -1,0 +1,170 @@
+#pastRacesDataWrapper {
+  display: inline-block;
+  padding-left: 160px;
+  list-style: none;
+  font-size: 12px;
+}
+
+#pastRacesDataId {
+  display: inline-block;
+  padding-left: 12px;
+  width: 36px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#pastRacesDataEntryFee {
+  display: inline-block;
+  width: 50px;
+  padding-left: 2px;
+  text-align: right;
+}
+
+#pastRacesDataPurse {
+  display: inline-block;
+  width: 70px;
+  padding-left: 2px;
+  text-align: right;
+}
+
+#pastRacesDataTime {
+  display: inline-block;
+  width: 52px;
+  padding-left: 51px;
+}
+
+#pastRacesDataWinner {
+  display: inline-block;
+  width: 90px;
+  padding-left: 28px;
+}
+
+#pastRacesDataYear {
+  display: inline-block;
+  width: 60px;
+  padding-left: 22px;
+}
+
+#pastRacesDataRacesName {
+  display: inline-block;
+  width: 92px;
+  padding-left: 12px;
+}
+
+#pastRacesDataOwner {
+  display: inline-block;
+  width: 110px;
+  padding-left: 16px;
+}
+
+#pastRacesDataTrainer {
+  display: inline-block;
+  width: 80px;
+  padding-left: 20px;
+}
+
+#pastRacesDataJockey {
+  display: inline-block;
+  width: 90px;
+  padding-left: 22px;
+}
+
+#pastRacesDataValue {
+  display: inline-block;
+  width: 40px;
+  padding-left: 22px;
+  text-align: right;
+}
+
+/*
+///
+
+List Section
+
+/// */
+
+#pastRacesDataHeader {
+  display: inline-block;
+  color: rgb(8, 8, 156);
+  background-color: green;
+  font-size: 20px;
+  padding-left: 20px;
+  margin-top: 240px;
+  letter-spacing: 1.5px;
+  padding-bottom: 0px;
+  position: fixed;
+}
+
+#pastRacesHeaderTitles {
+  display: inline-block;
+  padding-left: 210px;
+  margin-top: 160px;
+}
+#pastRacesListId {
+  display: inline-block;
+  padding-left: 4px;
+  width: 24px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#pastRacesListEntryFee {
+  display: inline-block;
+  width: 82px;
+  padding-left: 22px;
+}
+
+#pastRacesListPurse {
+  display: inline-block;
+  width: 20px;
+  padding-left: 4px;
+}
+
+#pastRacesListTime {
+  display: inline-block;
+  width: 40px;
+  padding-left: 58px;
+}
+
+#pastRacesListWinner {
+  display: inline-block;
+  width: 84px;
+  padding-left: 36px;
+}
+
+#pastRacesListDate {
+  display: inline-block;
+  width: 40px;
+  padding-left: 32px;
+}
+
+#pastRacesListpastRacesName {
+  display: inline-block;
+  width: 84px;
+  padding-left: 32px;
+}
+
+#pastRacesListOwner {
+  display: inline-block;
+  width: 52px;
+  padding-left: 24px;
+}
+
+#pastRacesListTrainer {
+  display: inline-block;
+  width: 92px;
+  padding-left: 74px;
+}
+#pastRacesListJockey {
+  display: inline-block;
+  width: 82px;
+  padding-left: 16px;
+}
+
+#pastRacesListValue {
+  display: inline-block;
+  width: 52px;
+  padding-left: 28px;
+}

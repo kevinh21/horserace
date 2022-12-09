@@ -1,0 +1,11 @@
+.raceScheduleTwoWrapper {
+  display: block;
+  margin-left: 30px;
+  margin-top: 260px;
+}
+
+.raceScheduleTwoFrame {
+  display: inline-block;
+  margin-left: 240px;
+  margin-top: -236px;
+}

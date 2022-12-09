@@ -1,0 +1,37 @@
+@media (min-width: 600px) {
+  .landingcards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.kevin {
+  background-color: red;
+}
+
+.landingCards {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  max-width: 1000px;
+  margin: auto;
+  padding-top: 7.5%;
+  display: grid;
+  gap: 1rem;
+}
+
+#landingCard {
+  background-color: dodgerblue;
+  color: white;
+  padding: 1rem;
+  height: auto;
+  width: auto;
+  border-radius: 12px;
+  font-size: 20px;
+  text-align: center;
+}
+
+#landingImageTwo {
+  max-width: 100%;
+  max-height: 100%;
+  padding-left: 0 auto;
+  justify-items: auto;
+  padding-top: 12px;
+}

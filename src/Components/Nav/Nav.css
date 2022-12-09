@@ -28,7 +28,7 @@
   z-index: +2;
   font-family: "Poppins", sans-serif;
   letter-spacing: 1px;
-  font-size: 12px;
+  font-size: 16px;
 }
 .navMenu {
   display: flex;
@@ -36,9 +36,9 @@
   flex-wrap: nowrap;
   justify-content: space-between;
   list-style: none;
-  margin-left: 6%;
+  margin-left: 3%;
   padding-top: 2.5%;
-  width: 70%;
+  width:90%;
 }
 
 .navMenu li {
@@ -90,8 +90,9 @@ a:hover {
 
 #navHowTo li {
   display: block;
-  width: 140px;
+  width: 240px;
   padding-top: 4%;
+  padding-left: 8%;
   display: none;
   /* background-color: white; */
   margin-bottom: 8px;
@@ -148,6 +149,7 @@ a:hover {
   display: block;
   width: 140px;
   padding-top: 4%;
+  padding-left: 8%;
   display: none;
   background-color: white;
 }
@@ -200,7 +202,7 @@ a:hover {
   display: block;
   width: 140px;
   padding-top: 4%;
-  padding-left: 12%;
+  padding-left: 8%;
   padding-bottom: 8%;
   display: none;
   background-color: white;
@@ -220,8 +222,9 @@ a:hover {
 .NavLink {
   display: flex;
   flex-direction: row;
-  margin-top: 200px;
+  position: fixed;
+  /* margin-top: 200px; */
   align-items: center;
-  height: 400px;
+  /* height: 400px; */
   background-color: rgb(123, 14, 232);
 }

@@ -1,0 +1,25 @@
+#jockeyRode {
+  font-size: 12pt;
+  font-weight: 500;
+  color: blue;
+}
+
+#jockeyTitles {
+  font-size: 12pt;
+  color: rgb(35, 38, 42);
+  font-weight: 600;
+}
+
+#raceJockeyList {
+  margin-top: 4px;
+  font-size: 10pt;
+  list-style: none;
+}
+
+#raceJockeyNumberOfJockeys {
+  margin-top: 10px;
+  font-size: 10pt;
+  font-weight: 500;
+  color: blue;
+  height: 100%;
+}

@@ -1,0 +1,52 @@
+.counterWrapper {
+  margin-top: 6px;
+  margin-left: 160px;
+}
+#configureText {
+  margin-top: 20px;
+  margin-left: 200px;
+  padding-left: 20px;
+  font-weight: 600;
+  font-size: 24px;
+}
+#cost {
+  margin-top: 2px;
+  margin-left: 200px;
+  margin-bottom: 30px;
+  padding-left: 42px;
+  font-size: 14px;
+}
+.counterWrapper button {
+  padding: 8px;
+  font-weight: 600;
+  margin-left: 64px;
+  margin-bottom: 8px;
+  width: 44px;
+}
+span {
+  display: inline-block;
+  margin-left: 80px;
+  padding: 12px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  font-weight: 600;
+}
+#totalPoints {
+  margin-left: 60px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  margin-right: 12px;
+  font-size: 28px;
+  font-weight: 600;
+  width: 32px;
+  text-align: center;
+  border-style: none;
+}
+.beginRace {
+  font-size: 28px;
+  font-weight: 600;
+  font-weight: 800;
+  color: rgb(8, 45, 231);
+  margin-left: 160px;
+  padding: 8px;
+}

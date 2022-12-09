@@ -1,0 +1,12 @@
+/* .betsWrapper {
+  display: inline-block;
+  margin-left: 192px;
+  margin-top: 92px;
+} */
+
+.betsWrapper {
+  display: flex;
+  margin-left: 300px;
+  margin-top: 72px;
+  position: fixed;
+}
